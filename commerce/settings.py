@@ -30,7 +30,7 @@ SECRET_KEY = 'django-insecure-5n*y8myebei=k+p^wkn79zh^t)br(@67rmk1)g_)l73+7q*@&x
 DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
-
+CSRF_TRUSTED_ORIGINS=["https://commerce-production-03dd.up.railway.app/", "http://127.0.0.1:8000/"]
 
 # Application definition
 
