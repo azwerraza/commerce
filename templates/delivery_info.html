@@ -1,0 +1,37 @@
+<!-- templates/delivery_info.html -->
+{% extends 'master.html' %}
+
+{% block body %}
+
+
+    <div class="container py-5">
+    <h2 class="mb-4">Delivery Information</h2>
+    </div>
+  </div>
+
+
+<div class="about">
+  <div class="container">
+    <div class="about_text">
+      <h3>Our Delivery Policy</h3>
+      <p>At Timeless Trend, we ensure your order reaches you as quickly and safely as possible. Please read our delivery guidelines below.</p>
+
+      <ul style="list-style: disc; padding-left: 20px; line-height: 30px;">
+        <li><strong>Standard Delivery Time:</strong> 2–5 business days within Lahore, and 5–10 days nationwide.</li>
+        <li><strong>Shipping Charges:</strong>
+          <ul style="list-style: circle; padding-left: 20px;">
+            <li>Free delivery on orders above PKR 2,000</li>
+            <li>PKR 200 for orders below PKR 2,000</li>
+          </ul>
+        </li>
+        <li><strong>Delivery Areas:</strong> We deliver all across Pakistan through trusted courier services.</li>
+        <li><strong>Cash on Delivery (COD):</strong> Available nationwide.</li>
+        <li><strong>Order Tracking:</strong> A tracking link will be shared via SMS/email once your order is shipped.</li>
+        <li><strong>Public Holidays:</strong> Deliveries may be delayed during national holidays or extreme weather conditions.</li>
+      </ul>
+
+      <p style="margin-top: 30px;">For any questions regarding your delivery, please feel free to <a href="{% url 'contact_page' %}" style="color: #f2c119;">contact us</a>.</p>
+    </div>
+  </div>
+</div>
+{% endblock %}

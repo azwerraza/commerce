@@ -1,0 +1,335 @@
+{% extends 'master.html' %}
+{% load custom_filters %}
+
+{% block body %}
+<!-- Main -->
+<style>
+.description .desc-line {
+  color: #797979;  /* grey color */
+  margin-bottom: 5px;
+}
+.desc-grey {
+  color: #797979; /* grey text */
+}
+
+
+</style>
+{% with product.category as category_slug %}
+<div class="main">
+
+    <!-- Gallery and Description -->
+    <div class="gallery-section">
+        <div class="gallery-thumbs">
+            <img src="{{ product.image.url }}" class="active" data-index="0" alt="Main Product">
+            {% for img in product.extra_images.all %}
+                <img src="{{ img.image.url }}" data-index="{{ forloop.counter }}" alt="Extra image {{ forloop.counter }}">
+            {% endfor %}
+        </div>
+
+<div class="description">
+  <div class="desc-title">Description</div>
+
+  {% if product.shirt_details %}
+    <div class="desc-block">
+      <div class="section-heading"><strong>Shirt</strong></div>
+      <div class="desc-grey">{{ product.shirt_details|safe }}</div>
+    </div>
+  {% endif %}
+
+  {% if product.trouser_details %}
+    <div class="desc-block" style="margin-top: 10px;">
+      <div class="section-heading"><strong>Trouser</strong></div>
+      <div class="desc-grey">{{ product.trouser_details|safe }}</div>
+    </div>
+  {% endif %}
+
+
+{% if product.fabric %}
+  <div class="desc-block" style="margin-top: 10px;">
+      <div class="section-heading"><strong>Fabric</strong><br></div>
+      <div class="desc-grey ">{{ product.fabric|linebreaksbr }}</div>
+  </div>
+{% endif %}
+
+<div class="desc-block" style="margin-top: 10px;">
+  <strong>Other Details</strong><br>
+  <div class="desc-grey">
+    {% if product.color %}Color: {{ product.color }}<br>{% endif %}
+    {% if product.weight %}Weight: {{ product.weight }}<br>{% endif %}
+    {% if product.model_size %}Model is wearing size "{{ product.model_size }}"<br>{% endif %}
+  </div>
+</div>
+
+
+
+            <br>
+<strong>{% if category_slug == 'rental' %}Rental Status{% else %}Availability{% endif %}</strong><br>
+
+<span style="color: {% if product.Availability == 'In Stock' %}green{% else %}red{% endif %}; font-weight: bold;">
+    {{ product.Availability }}
+</span><br>
+
+        </div>
+    </div>
+
+    <!-- Main Image -->
+    <div class="image-section">
+        <div class="main-img-container">
+            <button class="carousel-btn left">&#8592;</button>
+            <img id="mainImage" src="{{ product.image.url }}" alt="Main Product">
+            <button class="carousel-btn right">&#8594;</button>
+        </div>
+    </div>
+
+    <!-- Product Details & Form -->
+    <div class="details-section">
+        <div class="product-name">{{ product.name }}</div>
+        <div style="display:flex; align-items:center; gap:18px;">
+            <div class="product-price">Rs. {{ product.price }}</div>
+            <span class="free-delivery">FREE DELIVERY</span>
+        </div>
+
+        {% if category_slug == 'rental' %}
+        <div class="rental-policy">
+            <p><strong>Rental Duration:</strong> 3 Days</p>
+            <p><strong>Terms:</strong> Return in original condition. Late returns may be charged extra.</p>
+
+            <br>
+            <div class="price-chart">
+                <h4>Rental Price Chart</h4>
+                <table border="1" cellpadding="10" style="border-collapse: collapse; width: 100%; max-width: 500px;">
+                    <thead style="background-color: #f0f0f0;">
+                        <tr>
+                            <th>Duration</th>
+                            <th>Price (Rs.)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1 Day</td>
+                            <td>{{ product.price|rental_rate:1 }}</td>
+                        </tr>
+                        <tr>
+                            <td>2 Days</td>
+                            <td>{{ product.price|rental_rate:2 }}</td>
+                        </tr>
+                        <tr>
+                            <td>3 Days</td>
+                            <td>{{ product.price }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        {% endif %}
+
+        <form method="post" action="{% url 'cart_add' product.id %}">
+            {% csrf_token %}
+            {% if category_slug == 'rental' %}
+<div class="rental-duration-section" style="margin: 20px 0;">
+    <label for="rental_days"><strong>Select Rental Duration:</strong></label>
+    <select name="rental_days" id="rental_days" required>
+        <option value="1">1 Day - Rs. {{ product.price|rental_rate:1 }}</option>
+        <option value="2">2 Days - Rs. {{ product.price|rental_rate:2 }}</option>
+        <option value="3" selected>3 Days - Rs. {{ product.price }}</option>
+    </select>
+</div>
+{% endif %}
+            {% if category_slug != 'rental' %}
+            <div class="size-section">
+                <h4>Select Size:</h4>
+                <div class="sizes">
+                    {% for size in product.available_sizes.all %}
+                        <input type="radio" id="size-{{ size.id }}" name="size_id" value="{{ size.id }}"
+                               {% if forloop.first %}checked{% endif %} hidden>
+                        <label for="size-{{ size.id }}" class="size-btn {% if forloop.first %}active{% endif %}">
+                            {{ size.name }}
+                        </label>
+                    {% empty %}
+                        <p>No sizes available.</p>
+                        <input type="hidden" name="size_id" value="">
+                    {% endfor %}
+                </div>
+            </div>
+            {% endif %}
+
+            {% if category_slug != 'rental' %}
+  <div class="qty-section">
+      <div style="margin-bottom:7px; font-weight:600;">Quantity</div>
+      <div class="qty-controls">
+          <a href="{% url 'decrease_temp_qty' product.id %}" class="qty-btn">−</a>
+          <span class="qty-num">{{ temp_qty }}</span>
+          <a href="{% url 'increase_temp_qty' product.id %}" class="qty-btn">+</a>
+      </div>
+  </div>
+  <input type="hidden" name="quantity" value="{{ temp_qty }}">
+{% else %}
+  <input type="hidden" name="quantity" value="1">
+{% endif %}
+
+
+            <button type="submit" class="add-cart-btn">
+                {% if category_slug == 'rental' %}Rent Now{% else %}Add to Cart{% endif %}
+            </button>
+        </form>
+
+        <!-- Accordions -->
+        <div class="accordion">
+            {% for item in accordion_items %}
+            <div class="accordion-item">
+                <div class="accordion-title">{{ item.title }} <span>&#8964;</span></div>
+                <div class="accordion-content">{{ item.content|safe }}</div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<!-- Recommendations -->
+<div class="recommendations-section">
+    <div class="recommendations-container">
+        <div class="section-title">You may also like</div>
+        <div class="product-grid-container">
+            {% for prod in recommendations %}
+            <div class="product-card">
+                <div class="product-image">
+                    <a href="{% url 'product_detail' prod.id %}">
+                        <img src="{{ prod.image.url }}" alt="{{ prod.name }}" style="height:300px;width:100%;object-fit:cover;">
+                    </a>
+                    <a href="{% url 'cart_add' prod.id %}" class="cart-btn add-to-cart-btn">
+                        <svg width="20" height="20" fill="none" viewBox="0 0 24 24">
+                            <path d="M19 7H16V6C16 4.9 15.1 4 14 4H10C8.9 4 8 4.9 8 6V7H5C4.4 7 4 7.4 4 8C4 8.6 4.4 9 5 9H6L7 19C7 20.1 7.9 21 9 21H15C16.1 21 17 20.1 17 19L18 9H19C19.6 9 20 8.6 20 8C20 7.4 19.6 7 19 7ZM10 6H14V7H10V6Z" fill="currentColor"/>
+                        </svg>
+                    </a>
+                    {% if user.is_authenticated and prod.id in wishlist_items %}
+      <a href="{% url 'wishlist_remove' prod.id %}" class="wishlist-btn active" aria-label="Remove from wishlist">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="red">
+          <path d="M12.1 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5
+                   2 5.42 4.42 3 7.5 3c1.74 0 3.41 0.81 4.5
+                   2.09C13.09 3.81 14.76 3 16.5
+                   3 19.58 3 22 5.42 22 8.5c0
+                   3.78-3.4 6.86-8.55
+                   11.54L12.1 21.35z" fill="currentColor" />
+        </svg>
+      </a>
+    {% else %}
+      <a href="{% url 'wishlist_add' prod.id %}" class="wishlist-btn" aria-label="Add to wishlist">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+          <path d="M12.1 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5
+                   2 5.42 4.42 3 7.5 3c1.74 0 3.41 0.81 4.5
+                   2.09C13.09 3.81 14.76 3 16.5
+                   3 19.58 3 22 5.42 22 8.5c0
+                   3.78-3.4 6.86-8.55
+                   11.54L12.1 21.35z" fill="currentColor" />
+        </svg>
+      </a>
+    {% endif %}
+  </div>
+                <div class="product-info">
+                    <h3 class="product-price">Rs {{ prod.price }}</h3>
+                    <p class="product-title">{{ prod.name }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<!-- Lightbox -->
+<div id="lightbox" class="lightbox">
+    <span class="close-lightbox">&times;</span>
+    <div class="lightbox-content">
+        <img id="lightbox-img" src="" alt="Zoomed Product Image">
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const thumbnails = document.querySelectorAll('.gallery-thumbs img');
+    const mainImage = document.getElementById('mainImage');
+    const leftBtn = document.querySelector('.carousel-btn.left');
+    const rightBtn = document.querySelector('.carousel-btn.right');
+
+    const allImages = [
+        "{{ product.image.url }}",
+        {% for img in product.extra_images.all %}
+            "{{ img.image.url }}"{% if not forloop.last %},{% endif %}
+        {% endfor %}
+    ];
+
+    if (allImages.length === 0) return;
+
+    let currentIndex = 0;
+
+    function updateImage() {
+        mainImage.src = allImages[currentIndex];
+        thumbnails.forEach((thumb, index) => {
+            thumb.classList.toggle('active', index === currentIndex);
+        });
+    }
+
+    function showNextImage() {
+        currentIndex = (currentIndex + 1) % allImages.length;
+        updateImage();
+    }
+
+    function showPrevImage() {
+        currentIndex = (currentIndex - 1 + allImages.length) % allImages.length;
+        updateImage();
+    }
+
+    leftBtn.addEventListener('click', showPrevImage);
+    rightBtn.addEventListener('click', showNextImage);
+
+    thumbnails.forEach((thumb, index) => {
+        thumb.addEventListener('click', () => {
+            currentIndex = index;
+            updateImage();
+        });
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') showPrevImage();
+        if (e.key === 'ArrowRight') showNextImage();
+    });
+
+    updateImage();
+});
+
+// Accordion
+document.addEventListener('DOMContentLoaded', function() {
+    const accordionTitles = document.querySelectorAll('.accordion-title');
+
+    accordionTitles.forEach(title => {
+        title.addEventListener('click', () => {
+            // Toggle active class on title
+            title.classList.toggle('active');
+            // Toggle active class on content
+            const content = title.nextElementSibling;
+            content.classList.toggle('active');
+
+            // Close other open accordion items
+            accordionTitles.forEach(otherTitle => {
+                if (otherTitle !== title) {
+                    otherTitle.classList.remove('active');
+                    otherTitle.nextElementSibling.classList.remove('active');
+                }
+            });
+        });
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+    const sizeLabels = document.querySelectorAll('.size-btn');
+    sizeLabels.forEach(label => {
+        label.addEventListener('click', function () {
+            // Uncheck all radio buttons and remove active class
+            sizeLabels.forEach(lbl => lbl.classList.remove('active'));
+            this.classList.add('active');
+        });
+    });
+});
+
+</script>
+{% endwith %}
+{% endblock %}

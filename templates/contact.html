@@ -1,0 +1,45 @@
+{% extends 'master.html' %}
+{% block body %}
+
+<!-- banner -->
+<div class="container py-5">
+    <h2 class="mb-4">Contact Us</h2>
+</div>
+      <!-- contact section -->
+      <div id="contact" class="contact">
+         <div class="con_bg">
+            <div class="container">
+               <div class="row">
+                  <div class="col-md-10 offset-md-1">
+                     <form id="request" class="main_form" method="POST" action="{% url 'contact_page' %}">
+
+                         {% csrf_token %}
+                        <div class="row">
+                           <div class="col-md-6 col-sm-6">
+                              <input class="contactus" placeholder="Name" type="text" name="name">
+                           </div>
+                           <div class="col-md-6 col-sm-6">
+                              <input class="contactus" placeholder="Phone Number" type="tel" name="phone_number">
+                           </div>
+                           <div class="col-md-6 col-sm-6">
+                              <input class="contactus" placeholder="Email" type="email" name="email">
+                           </div>
+                           <div class="col-md-6 col-sm-6">
+                              <input class="contactus" placeholder="Address" type="text" name="address">
+                           </div>
+                           <div class="col-md-12">
+                           <input class="contactusmess" placeholder="Message" type="text" name="message">
+                           </div>
+                           <div class="col-md-12">
+                              <button class="send_btn">Send</button>
+                           </div>
+                        </div>
+                     </form>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- end contact section -->
+
+{% endblock%}

@@ -1,0 +1,104 @@
+<!--{% extends "master.html" %}-->
+<!--{% block body %}-->
+<!--<style>-->
+<!--  .color-option.selected {-->
+<!--    outline: 3px solid black;-->
+<!--  }-->
+<!--</style>-->
+<!--<img src="{{ skin_mask_url }}"> &lt;!&ndash; Temporarily add this to confirm URL is valid &ndash;&gt;-->
+
+<!--&lt;!&ndash; virtual_try_on.html &ndash;&gt;&lt;!&ndash; virtual_try_on.html &ndash;&gt;-->
+<!--<div class="avatar-container">-->
+<!--  <canvas id="avatar-canvas" width="300" height="400"></canvas>-->
+
+<!--</div>-->
+<!--<div class="color-options" style="margin-top: 20px;">-->
+<!--  {% for color in colors %}-->
+<!--    <div class="color-option"-->
+<!--         data-color="{{ color }}"-->
+<!--         style="background-color: {{ color }}; width: 30px; height: 30px; display: inline-block; margin-right: 10px; border-radius: 50%; cursor: pointer;">-->
+<!--    </div>-->
+<!--  {% endfor %}-->
+<!--</div>-->
+
+<!--<script>-->
+<!--document.addEventListener('DOMContentLoaded', function () {-->
+<!--  const canvas = document.getElementById('avatar-canvas');-->
+<!--  const ctx = canvas.getContext('2d');-->
+
+<!--  const baseAvatar = new Image();-->
+<!--  const clothingMask = new Image();-->
+<!--  const skinMask = new Image();-->
+
+<!--  const skinToneColor = '{{ selected_tone.color_hex }}';-->
+<!--  const clothingColors = {{ colors|safe }};-->
+<!--  let currentColor = null;-->
+
+<!--  baseAvatar.src = '{{ base_avatar_url }}';-->
+<!--  clothingMask.src = '{{ clothing_mask_url }}';-->
+<!--  skinMask.src = '{{ skin_mask_url }}';-->
+
+<!--  let imagesLoaded = 0;-->
+<!--  function whenAllLoaded() {-->
+<!--    imagesLoaded++;-->
+<!--    if (imagesLoaded === 3) {-->
+<!--      drawAvatar();-->
+<!--    }-->
+<!--  }-->
+
+<!--  baseAvatar.onload = whenAllLoaded;-->
+<!--  clothingMask.onload = whenAllLoaded;-->
+<!--  skinMask.onload = whenAllLoaded;-->
+
+<!--  function drawAvatar() {-->
+<!--    ctx.clearRect(0, 0, canvas.width, canvas.height);-->
+
+<!--    // Step 1: Draw base avatar-->
+<!--    ctx.drawImage(baseAvatar, 0, 0, canvas.width, canvas.height);-->
+
+<!--    // Step 2: Apply skin tone using skin mask-->
+<!--    if (skinToneColor && skinMask.complete) {-->
+<!--      const skinCanvas = document.createElement('canvas');-->
+<!--      skinCanvas.width = canvas.width;-->
+<!--      skinCanvas.height = canvas.height;-->
+<!--      const skinCtx = skinCanvas.getContext('2d');-->
+
+<!--      skinCtx.drawImage(skinMask, 0, 0, canvas.width, canvas.height);-->
+<!--      skinCtx.globalCompositeOperation = 'source-in';-->
+<!--      skinCtx.fillStyle = skinToneColor;-->
+<!--      skinCtx.fillRect(0, 0, canvas.width, canvas.height);-->
+
+<!--      ctx.drawImage(skinCanvas, 0, 0);-->
+<!--    }-->
+
+<!--    // Step 3: Apply clothing color using clothing mask-->
+<!--    if (currentColor && clothingMask.complete) {-->
+<!--      const clothingCanvas = document.createElement('canvas');-->
+<!--      clothingCanvas.width = canvas.width;-->
+<!--      clothingCanvas.height = canvas.height;-->
+<!--      const clothingCtx = clothingCanvas.getContext('2d');-->
+
+<!--      clothingCtx.drawImage(clothingMask, 0, 0, canvas.width, canvas.height);-->
+<!--      clothingCtx.globalCompositeOperation = 'source-in';-->
+<!--      clothingCtx.fillStyle = currentColor;-->
+<!--      clothingCtx.fillRect(0, 0, canvas.width, canvas.height);-->
+
+<!--      ctx.drawImage(clothingCanvas, 0, 0);-->
+<!--    }-->
+<!--  }-->
+
+<!--  // Apply color to clothing when selected-->
+<!--  document.querySelectorAll('.color-option').forEach(option => {-->
+<!--    option.addEventListener('click', function () {-->
+<!--      currentColor = this.dataset.color;-->
+<!--      drawAvatar();-->
+
+<!--      // UI update-->
+<!--      document.querySelectorAll('.color-option').forEach(opt => opt.classList.remove('selected'));-->
+<!--      this.classList.add('selected');-->
+<!--    });-->
+<!--  });-->
+<!--});-->
+<!--</script>-->
+
+<!--{% endblock %}-->

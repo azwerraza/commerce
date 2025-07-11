@@ -1,0 +1,79 @@
+{% extends 'master.html' %}
+{% block body %}
+
+<div class="cart-contain">
+  <h2>Your Orders</h2>
+{% if messages %}
+  <div id="message-container">
+    {% for message in messages %}
+      <div class="alert alert-{{ message.tags }}">
+        {{ message }}
+      </div>
+    {% endfor %}
+  </div>
+{% endif %}
+
+  {% if order %}
+  <div class="text-right mb-3">
+    <form method="post" action="{% url 'clear_orders' %}">
+      {% csrf_token %}
+      <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure you want to clear all your order history?')">
+        Clear All Orders
+      </button>
+    </form>
+  </div>
+
+  <div class="cart-list" id="cart-list">
+    <table>
+      <thead>
+        <tr>
+          <th>Image</th>
+          <th>Product</th>
+          <th>Size</th>
+          <th>Price</th>
+          <th>Qty</th>
+          <th>Total</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for item in order %}
+        <tr>
+          <td>
+            {% if item.image %}
+              <img src="{{ item.image.url }}" alt="{{ item.product }}" width="60" class="img-thumbnail">
+            {% else %}
+              <div class="no-image">No image</div>
+            {% endif %}
+          </td>
+          <td>{{ item.product }}</td>
+          <td>{{ item.size|default:"-" }}</td>
+          <td>Rs. {{ item.price }}</td>
+          <td>{{ item.quantity }}</td>
+          <td>Rs. {{ item.total }}</td>
+          <td>{{ item.date|date:"d M Y" }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  {% else %}
+  <div class="alert alert-info">
+    <p>You haven't placed any orders yet.</p>
+    <a href="{% url 'index' %}" class="btn btn-primary">Continue Shopping</a>
+  </div>
+  {% endif %}
+</div>
+
+<script>
+  setTimeout(function () {
+    var messages = document.getElementById('message-container');
+    if (messages) {
+      messages.style.transition = "opacity 1s ease";
+      messages.style.opacity = 0;
+      setTimeout(() => messages.remove(), 1000); // remove after fade-out
+    }
+  }, 5000); // 5 seconds delay
+</script>
+
+{% endblock %}

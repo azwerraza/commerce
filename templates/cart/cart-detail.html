@@ -1,0 +1,670 @@
+{% extends 'master.html' %}
+{% load cart_tag %}
+{% load static %}
+
+{% block body %}
+    <style>
+    .selected-wallet {
+  border: 2px solid #4CAF50;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+        .payment-options {
+            display: flex;
+            gap: 15px;
+            margin: 20px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .payment-btn {
+            flex: 1;
+            padding: 18px 25px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            background-color: white;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .payment-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .payment-btn.selected {
+            border-color: #4CAF50;
+            background-color: #e8f5e9;
+        }
+
+        .cash-btn.selected {
+            animation: cashPulse 0.6s ease;
+        }
+.wave-animation {
+    animation: wave 1s ease-in-out;
+}
+.pulse-animation {
+    animation: pulse 1s ease-in-out;
+}
+
+        .payment-btn i {
+            margin-right: 10px;
+            font-size: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .cash-icon {
+            color: #2196F3;
+        }
+
+        .online-icon {
+            color: #FF5722;
+        }
+
+        /* Money flying animation */
+        .money-flying {
+            position: absolute;
+            font-size: 16px;
+            opacity: 0;
+            z-index: 10;
+        }
+
+        @keyframes flyMoney {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+                left: 50%;
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+                left: calc(50% + 50px);
+            }
+        }
+
+        @keyframes flyMoneyReverse {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+                left: 50%;
+            }
+            100% {
+                transform: translateY(-100px) rotate(-360deg);
+                opacity: 0;
+                left: calc(50% - 50px);
+            }
+        }
+
+        @keyframes cashPulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+    /* Add these new animations for the credit card effect */
+    @keyframes cardSwipe {
+        0% {
+            transform: translateX(-30px) rotateY(0deg);
+            opacity: 0;
+        }
+        30% {
+            opacity: 1;
+        }
+        70% {
+            transform: translateX(10px) rotateY(0deg);
+        }
+        100% {
+            transform: translateX(0) rotateY(0deg);
+        }
+    }
+
+    @keyframes cardInsert {
+        0% {
+            transform: translateX(-30px) rotateY(0deg);
+            opacity: 0;
+        }
+        100% {
+            transform: translateX(0) rotateY(0deg);
+            opacity: 1;
+        }
+    }
+
+    .card-swipe {
+        animation: cardSwipe 0.8s ease-out;
+    }
+
+    .card-insert {
+        animation: cardInsert 0.4s ease-out;
+    }
+    @keyframes fallMoney {
+  0% {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(20px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+}
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<!-- Cart Section -->
+<main class="cart-contain">
+  <h2>Your Shopping Cart</h2>
+
+  <div class="cart-list" id="cart-list">
+    <!-- Add Clear Cart button here (top of cart) -->
+    {% if cart %}
+      <div style="text-align: right; margin-bottom: 20px;">
+        <a href="{% url 'cart_clear' %}" class="btn btn-danger"
+           style="background: #dc3545; color: white; padding: 8px 15px; border-radius: 4px; text-decoration: none;">
+          Clear Entire Cart
+        </a>
+      </div>
+    {% endif %}
+
+<table>
+  <thead>
+    <tr>
+      <th>Item</th>
+      <th>Price</th>
+      <th>Size</th>  <!-- New Column -->
+      <th>Quantity</th>
+      <th>Total</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for item in cart %}
+    <tr>
+      <td>
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <img src="{{ item.product.image.url }}" alt="{{ item.product.name }}" width="60">
+          <div>
+            <a href="{{ item.product.get_absolute_url }}">{{ item.product.name }}</a><br>
+            <small>ID: {{ item.product.id }}</small>
+          </div>
+        </div>
+      </td>
+      <td>Rs. {{ item.price }}</td>
+      <td>{{ item.size_name }}</td>  <!-- Display Size -->
+      <td>
+  {% if item.product.category == 'rental' %}
+    <span>1</span> <!-- Rental wear should always have 1 quantity -->
+  {% else %}
+    <div style="display: flex; align-items: center; gap: 5px;">
+      <a href="{% url 'item_decrement' id=item.product.id %}?size_id={{ item.size_id }}" style="font-size: 1.2rem;">➖</a>
+      <span>{{ item.quantity }}</span>
+      <a href="{% url 'item_increment' id=item.product.id %}?size_id={{ item.size_id }}" style="font-size: 1.2rem;">➕</a>
+    </div>
+  {% endif %}
+</td>
+
+      <td>
+        Rs. {{ item.total_price }}
+        <a href="{% url 'item_clear' id=item.product.id %}?size_id={{ item.size_id }}{% if item.rental_days %}&rental_days={{ item.rental_days }}{% endif %}" style="font-size: 1.2rem; color: red;">❌</a>
+      </td>
+    </tr>
+  {% empty %}
+    <tr>
+      <td colspan="5">Your cart is empty</td>
+    </tr>
+  {% if item.rental_days %}
+  <tr>
+    <td colspan="5">
+      <div style="padding-left: 70px; color: #444;">
+        <strong>Rental Duration:</strong> {{ item.rental_days }} day(s)<br>
+        <strong>Rental Price per unit:</strong> Rs. {{ item.price }}<br>
+        <strong>Subtotal:</strong> Rs. {{ item.total_price }}
+      </div>
+    </td>
+  </tr>
+{% endif %}
+
+  {% endfor %}
+  </tbody>
+</table>
+
+    <div class="cart-summary-contain">
+      <div class="cart-summary">
+        <p>Subtotal: Rs <span id="subtotal">{{ total_price }}</span></p>
+        <div class="checkout-btn-box">
+          <a class="btn btn-primary checkout-btn" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Proceed to Checkout</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Checkout</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="modal-body">
+        <!-- Step 1: Address Form -->
+        <div id="step-1">
+          <form id="shipping-form">
+            {% csrf_token %}
+            <div class="mb-3">
+              <label for="phone" class="form-label">Phone:</label>
+              <input type="text" class="form-control" name="phone" id="phone" required>
+            </div>
+            <div class="mb-3">
+              <label for="address" class="form-label">Address:</label>
+              <textarea class="form-control" name="address" id="address" required></textarea>
+            </div>
+            <div class="mb-3">
+              <label for="pincode" class="form-label">Pincode:</label>
+              <input type="text" class="form-control" name="pincode" id="pincode" required>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" id="next-btn">Next</button>
+            </div>
+          </form>
+        </div>
+
+<div id="step-2" style="display: none;">
+  <h5>Select Payment Method</h5>
+
+  <!-- Animated Payment Buttons -->
+  <div class="payment-options">
+    <button type="button" class="payment-btn cash-btn" id="cash-btn">
+      <i class="fas fa-money-bill-wave cash-icon"></i>
+      Cash on Delivery
+      <div id="money-container"></div>
+    </button>
+
+    <button type="button" class="payment-btn" id="online-btn">
+      <i class="fas fa-credit-card online-icon"></i>
+      Online Payment
+    </button>
+  </div>
+
+  <div id="step-3" style="display: none;">
+  <h5>Select Online Payment Method</h5>
+  <div class="payment-container">
+
+    <!-- Payment Options -->
+    <div class="payment-options">
+      <!-- Card Payment -->
+      <button class="payment-btn" id="card-btn">
+        <div class="card-container">
+          <i class="fas fa-credit-card card-icon"></i>
+          <i class="fas fa-microchip card-chip"></i>
+        </div>
+        Credit/Debit Card
+      </button>
+
+      <!-- Bank Transfer -->
+<!--      <button class="payment-btn" id="bank-btn">-->
+<!--        <i class="fas fa-university bank-icon"></i>-->
+<!--        Bank Transfer-->
+<!--      </button>-->
+
+      <!-- Mobile Wallet -->
+      <button class="payment-btn" id="wallet-btn">
+        <i class="fas fa-mobile-alt wallet-icon"></i>
+        Mobile Wallet
+      </button>
+    </div>
+
+    <!-- Card Payment Form -->
+<div id="card-form" style="display: none; margin-top: 20px;">
+  <div class="mb-3">
+    <label for="card-number" class="form-label">Card Number</label>
+    <input type="text" class="form-control" id="card-number" placeholder="1234 5678 9012 3456">
+  </div>
+  <div class="row">
+    <div class="col">
+      <label for="expiry-date" class="form-label">Expiry Date</label>
+      <input type="text" class="form-control" id="expiry-date" placeholder="MM/YY">
+    </div>
+    <div class="col">
+      <label for="cvv" class="form-label">CVV</label>
+      <input type="text" class="form-control" id="cvv" placeholder="123">
+    </div>
+  </div>
+</div>
+
+<!-- Wallet Payment Form -->
+<div id="wallet-form" style="display: none; margin-top: 20px;">
+  <p>Select your wallet provider:</p>
+
+  <div class="wallet-options" style="display: flex; gap: 15px;">
+    <div class="wallet-option" id="jazzcash-option" onclick="selectWallet('JazzCash')" style="cursor: pointer;">
+      <img src="{% static 'images/jazzcash.png' %}" alt="JazzCash" style="height: 50px;">
+<!--      <div>JazzCash</div>-->
+    </div>
+
+    <div class="wallet-option" id="easypaisa-option" onclick="selectWallet('EasyPaisa')" style="cursor: pointer;">
+      <img src="{% static 'images/easypaisa.png' %}" alt="EasyPaisa" style="height: 50px;">
+<!--      <div>EasyPaisa</div>-->
+    </div>
+  </div>
+
+  <div class="mb-3 mt-3">
+    <label for="wallet-number" class="form-label">Mobile Number</label>
+    <input type="text" class="form-control" id="wallet-number" placeholder="03XX XXXXXXX">
+  </div>
+
+  <input type="hidden" name="wallet_provider" id="wallet-provider">
+</div>
+  </div>
+  </div>
+  <!-- Hidden form to store user data and selection -->
+  <form method="post" action="/checkout/" id="final-checkout-form" style="margin-top: 20px;">
+    {% csrf_token %}
+    <input type="hidden" name="phone" id="final-phone">
+    <input type="hidden" name="address" id="final-address">
+    <input type="hidden" name="pincode" id="final-pincode">
+    <input type="hidden" name="payment_method" id="payment-method" value="cod">
+<input type="hidden" name="online_method" id="online-method"> <!-- ✅ ADD THIS -->
+<input type="hidden" name="wallet_number" id="final-wallet-number">
+
+<!-- default -->
+
+    <div class="modal-footer">
+      <!-- Default: visible for COD -->
+<button type="submit" id="confirm-order-btn" class="btn btn-success">Confirm Order</button>
+
+<!-- Hidden: will show if online selected -->
+<button type="button" id="online-next-btn" class="btn btn-warning" style="display: none;">Next</button>
+
+    </div>
+  </form>
+</div>
+      </div>
+
+    </div>
+  </div>
+</div>
+<script>
+  const cashBtn = document.getElementById('cash-btn');
+  const onlineBtn = document.getElementById('online-btn');
+  const nextBtn = document.getElementById('next-btn');
+  const onlineNextBtn = document.getElementById('online-next-btn');
+  const confirmBtn = document.getElementById('confirm-order-btn');
+const step3 = document.getElementById('step-3');
+  const finalForm = document.getElementById('final-checkout-form');
+  const moneyContainer = document.getElementById('money-container');
+  const cardBtn = document.getElementById('card-btn');
+
+  const walletBtn = document.getElementById('wallet-btn');
+  const onlineMethodInput = document.getElementById('online-method');
+
+  // Step 1 → Step 2 (Address Form → Payment Method)
+  nextBtn.addEventListener("click", function () {
+    const phone = document.getElementById("phone").value.trim();
+    const address = document.getElementById("address").value.trim();
+    const pincode = document.getElementById("pincode").value.trim();
+
+    if (!phone || !address || !pincode) {
+      alert("Please fill in all required fields.");
+      return;
+    }
+
+    document.getElementById("final-phone").value = phone;
+    document.getElementById("final-address").value = address;
+    document.getElementById("final-pincode").value = pincode;
+
+    document.getElementById("step-1").style.display = "none";
+    document.getElementById("step-2").style.display = "block";
+  });
+
+  // Step 2 → Step 3 (If Online Payment Selected)
+  document.getElementById('online-next-btn').addEventListener('click', function () {
+    step3.style.display = "block";              // Show step-3 (online payment methods)
+    confirmBtn.style.display = "inline-block";  // Show Confirm Order button
+    onlineNextBtn.style.display = "none";       // Hide the Next button now
+});
+
+  // Payment Selection Logic
+  cashBtn.addEventListener('click', function () {
+    document.getElementById("payment-method").value = "cod";
+    cashBtn.classList.add('selected');
+    onlineBtn.classList.remove('selected');
+    createFallingMoney();
+  });
+
+  onlineBtn.addEventListener('click', function () {
+    document.getElementById("payment-method").value = "online";
+    onlineBtn.classList.add('selected');
+    cashBtn.classList.remove('selected');
+    moneyContainer.innerHTML = '';
+    onlineNextBtn.style.display = 'inline-block';
+
+  });
+  onlineNextBtn.addEventListener("click", function () {
+  step3.style.display = "block";
+  confirmBtn.style.display = "inline-block";   // Show confirm button
+  onlineNextBtn.style.display = "none";        // Hide next button
+});
+
+
+  // Final Form Submission Handler
+  finalForm.addEventListener("submit", function (e) {
+    const method = document.getElementById("payment-method").value;
+
+    if (method === "online") {
+      e.preventDefault();
+document.getElementById("final-wallet-number").value = document.getElementById("wallet-number").value.trim();
+
+      const formData = new FormData(finalForm);
+      fetch("/start-payment/", {
+        method: "POST",
+        body: formData,
+        headers: {
+          "X-CSRFToken": formData.get("csrfmiddlewaretoken")
+        }
+      })
+      .then(response => response.json())
+      .then(data => {
+        if (data.redirect_url) {
+          window.location.href = data.redirect_url;
+        } else {
+          alert("Error processing payment.");
+        }
+      });
+    }
+  });
+
+  // Falling Cash Animation
+  function createFallingMoney() {
+    moneyContainer.innerHTML = '';
+    for (let i = 0; i < 6; i++) {
+      const money = document.createElement('i');
+      money.className = 'falling-money fas fa-money-bill-wave';
+      money.style.color = '#4CAF50';
+      money.style.position = 'absolute';
+      money.style.fontSize = (14 + Math.random() * 8) + 'px';
+      money.style.left = Math.random() * 80 + 10 + '%';
+      const duration = 1 + Math.random() * 0.5;
+      const delay = Math.random() * 0.5;
+      money.style.animation = `fallMoney ${duration}s ease-in ${delay}s forwards`;
+      moneyContainer.appendChild(money);
+      setTimeout(() => { money.remove(); }, (duration + delay) * 1000);
+    }
+  }
+
+  // Online Submethod Selection Logic
+  cardBtn.addEventListener('click', function () {
+    resetSelections();
+    cardBtn.classList.add('selected');
+    animateCard();
+    onlineMethodInput.value = 'card';
+  });
+
+<!--  bankBtn.addEventListener('click', function () {-->
+<!--    resetSelections();-->
+<!--    bankBtn.classList.add('selected');-->
+<!--    animateBank();-->
+<!--    onlineMethodInput.value = 'bank';-->
+<!--  });-->
+
+  walletBtn.addEventListener('click', function () {
+    resetSelections();
+    walletBtn.classList.add('selected');
+    animateWallet();
+    onlineMethodInput.value = 'wallet';
+  });
+
+  function resetSelections() {
+    cardBtn.classList.remove('selected');
+<!--    bankBtn.classList.remove('selected');-->
+    walletBtn.classList.remove('selected');
+  }
+
+  function animateCard() {
+    const icon = cardBtn.querySelector('.fa-credit-card');
+    icon.classList.remove('card-swipe');
+    void icon.offsetWidth;
+    icon.classList.add('card-swipe');
+    setTimeout(() => icon.classList.remove('card-swipe'), 1000);
+  }
+
+<!--  function animateBank() {-->
+<!--    const icon = bankBtn.querySelector('.fa-university');-->
+<!--    icon.classList.remove('wave-animation');-->
+<!--    void icon.offsetWidth;-->
+<!--    icon.classList.add('wave-animation');-->
+<!--    setTimeout(() => icon.classList.remove('wave-animation'), 1000);-->
+<!--  }-->
+
+  function animateWallet() {
+    const icon = walletBtn.querySelector('.fa-mobile-alt');
+    icon.classList.remove('pulse-animation');
+    void icon.offsetWidth;
+    icon.classList.add('pulse-animation');
+    setTimeout(() => icon.classList.remove('pulse-animation'), 1000);
+  }
+
+  // Initialize
+  document.addEventListener('DOMContentLoaded', function () {
+    onlineBtn.querySelector('i').classList.add('card-insert');
+  });
+
+  cardBtn.addEventListener('click', function () {
+  resetSelections();
+  cardBtn.classList.add('selected');
+  animateCard();
+  onlineMethodInput.value = 'card';
+
+  // ✅ SHOW card form when card is selected
+  document.getElementById('card-form').style.display = 'block';
+});
+
+<!--bankBtn.addEventListener('click', function () {-->
+<!--  resetSelections();-->
+<!--  bankBtn.classList.add('selected');-->
+<!--  animateBank();-->
+<!--  onlineMethodInput.value = 'bank';-->
+
+<!--  // ✅ HIDE card form-->
+<!--  document.getElementById('card-form').style.display = 'none';-->
+<!--});-->
+
+walletBtn.addEventListener('click', function () {
+  resetSelections();
+  walletBtn.classList.add('selected');
+  animateWallet();
+  onlineMethodInput.value = 'wallet';
+
+  // ✅ HIDE card form
+  document.getElementById('card-form').style.display = 'none';
+});
+
+<!--wallet form-->
+walletBtn.addEventListener('click', function () {
+  resetSelections();
+  walletBtn.classList.add('selected');
+  animateWallet();
+  onlineMethodInput.value = 'wallet';
+
+  // Hide other forms
+  document.getElementById('card-form').style.display = 'none';
+  // ✅ Show wallet form
+  document.getElementById('wallet-form').style.display = 'block';
+});
+
+<!--bankBtn.addEventListener('click', function () {-->
+<!--  resetSelections();-->
+<!--  bankBtn.classList.add('selected');-->
+<!--  animateBank();-->
+<!--  onlineMethodInput.value = 'bank';-->
+
+<!--  document.getElementById('card-form').style.display = 'none';-->
+<!--  document.getElementById('wallet-form').style.display = 'none';-->
+<!--});-->
+
+cardBtn.addEventListener('click', function () {
+  resetSelections();
+  cardBtn.classList.add('selected');
+  animateCard();
+  onlineMethodInput.value = 'card';
+
+  document.getElementById('card-form').style.display = 'block';
+  document.getElementById('wallet-form').style.display = 'none';
+});
+
+// Handle wallet provider selection
+function selectWallet(provider) {
+  document.getElementById('wallet-provider').value = provider;
+
+  // Visual highlight
+  document.querySelectorAll('.wallet-option').forEach(el => el.classList.remove('selected-wallet'));
+  if (provider === 'JazzCash') {
+    document.getElementById('jazzcash-option').classList.add('selected-wallet');
+  } else if (provider === 'EasyPaisa') {
+    document.getElementById('easypaisa-option').classList.add('selected-wallet');
+  }
+}
+
+// Utility to hide all forms
+function hideAllPaymentForms() {
+  document.getElementById('card-form').style.display = 'none';
+  document.getElementById('wallet-form').style.display = 'none';
+}
+
+// Card button click
+cardBtn.addEventListener('click', function () {
+  resetSelections();
+  cardBtn.classList.add('selected');
+  animateCard();
+  onlineMethodInput.value = 'card';
+
+  hideAllPaymentForms();
+  document.getElementById('card-form').style.display = 'block';
+});
+
+// Wallet button click
+walletBtn.addEventListener('click', function () {
+  resetSelections();
+  walletBtn.classList.add('selected');
+  animateWallet();
+  onlineMethodInput.value = 'wallet';
+
+  hideAllPaymentForms();
+  document.getElementById('wallet-form').style.display = 'block';
+});
+
+</script>
+
+
+
+{% endblock %}

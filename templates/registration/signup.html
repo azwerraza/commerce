@@ -1,0 +1,117 @@
+{% extends 'master.html' %}
+{% block body %}
+
+<div class="blue_bg">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="titlepage">
+          <h2>New User Signup</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="center-page">
+  <div class="container-form">
+
+    {% if messages %}
+      {% for message in messages %}
+        <div class="alert {{ message.tags }}">{{ message }}</div>
+      {% endfor %}
+    {% endif %}
+
+    {% if form.errors %}
+      <ul class="errorlist">
+        {% for field in form %}
+          {% for error in field.errors %}
+            <li>{{ field.label }}: {{ error }}</li>
+          {% endfor %}
+        {% endfor %}
+        {% for error in form.non_field_errors %}
+          <li>{{ error }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+
+    <div class="form">
+      <form method="POST" action="{% url 'signup' %}">
+        {% csrf_token %}
+
+        <!-- Username -->
+        <div class="input-box">
+          {{ form.username.label_tag }}
+          {{ form.username }}
+        </div>
+
+        <!-- Email -->
+        <div class="input-box">
+          {{ form.email.label_tag }}
+          {{ form.email }}
+        </div>
+
+        <!-- Password -->
+        <div class="input-box">
+          {{ form.password1.label_tag }}
+          {{ form.password1 }}
+        </div>
+
+        <!-- Confirm Password -->
+        <div class="input-box">
+          {{ form.password2.label_tag }}
+          {{ form.password2 }}
+        </div>
+
+        <!-- Phone Number -->
+        <div class="input-box">
+          {{ form.phonenumber.label_tag }}
+          {{ form.phonenumber }}
+        </div>
+
+        <!-- Address (STANDALONE, FULL WIDTH) -->
+        <div class="input-box address">
+          {{ form.address.label_tag }}
+          {{ form.address }}
+        </div>
+        <div class="input-box address">
+          {{ form.address_line_2.label_tag }}
+          {{ form.address_line_2 }}
+        </div>
+
+        <!-- Country and City / Side by side with .form.column -->
+        <div class="form column">
+          <div class="input-box">
+            {{ form.country.label_tag }}
+            <div class="select-box">
+              {{ form.country }}
+            </div>
+          </div>
+          <div class="input-box">
+            {{ form.city.label_tag }}
+            {{ form.city }}
+          </div>
+        </div>
+        <!-- Region and Postal Code / Side by side -->
+        <div class="form column">
+          <div class="input-box">
+            {{ form.region.label_tag }}
+            {{ form.region }}
+          </div>
+          <div class="input-box">
+            {{ form.postal_code.label_tag }}
+            {{ form.postal_code }}
+          </div>
+        </div>
+
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+
+    <div class="form-footer">
+      <p>Already have an account? <a href="{% url 'login' %}">Login here</a></p>
+    </div>
+
+  </div>
+</div>
+{% endblock %}

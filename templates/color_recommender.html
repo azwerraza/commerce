@@ -1,0 +1,172 @@
+{% extends "master.html" %}
+{% block body %}
+<style>
+  .color_header {
+    background-color: #212121;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .steps {
+    display: flex;
+    justify-content: center;
+    background-color: #333;
+    padding: 10px 0;
+  }
+
+  .step {
+    color: white;
+    padding: 10px 20px;
+    margin: 0 5px;
+    border-radius: 20px;
+    background-color: #555;
+    font-weight: bold;
+  }
+
+  .step.active {
+    background-color: #00bcd4;
+  }
+
+  .color_container {
+    padding: 40px;
+    max-width: 1200px;
+    margin: auto;
+  }
+
+  .section-title {
+    font-size: 24px;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 30px;
+  }
+
+  .card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.2s ease;
+    cursor: pointer;
+  }
+
+  .card:hover {
+    transform: translateY(-5px);
+  }
+
+  .card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+  }
+
+  .card h3 {
+    margin: 0;
+    padding: 15px;
+    font-size: 18px;
+  }
+
+
+</style>
+
+<div class="color_header">
+  <h2>Color Recommender</h2>
+</div>
+
+<div class="steps">
+  <div class="step {% if current_step == 1 %}active{% endif %}">1. Select Skin Tone</div>
+  <div class="step {% if current_step == 2 %}active{% endif %}">2. Suggested Colors</div>
+  <div class="step {% if current_step == 3 %}active{% endif %}">3. Recommended Products</div>
+<!--  <div class="step {% if current_step == 4 %}active{% endif %}">4. Try-On Feature</div>-->
+</div>
+
+
+<div class="color_container">
+  <h2 class="section-title">Choose Your Skin Tone</h2>
+  <div class="card-grid">
+    {% for tone in skin_tones %}
+      <a href="?tone_id={{ tone.id }}" style="text-decoration: none;">
+        <div class="card">
+          <div style="width: 100%; height: 160px; background-color: {{ tone.color_hex }};"></div>
+          <h3>{{ tone.name }}</h3>
+        </div>
+      </a>
+    {% endfor %}
+  </div>
+  <div style="margin-top: 40px; text-align: center;">
+  <h2>Or Upload Your Image to Detect Skin Tone</h2>
+  <form action="{% url 'upload_image' %}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type="file" name="image" accept="image/*" required>
+    <br><br>
+    <button type="submit" style="padding: 10px 20px; background-color: #4CAF50; color: white; border: none; border-radius: 6px;">
+      Upload and Detect
+    </button>
+  </form>
+</div>
+
+</div>
+
+{% if selected_tone %}
+    {% if palettes %}
+      <h2 class="section-title">Suggested Colors for {{ selected_tone.name }}</h2>
+      <div style="display: flex; gap: 12px; flex-wrap: wrap;  justify-content: center;">
+        {% for color in palettes %}
+          <div style="width:50px; height:50px; background-color:{{ color.color_hex }}; border:1px solid #ccc; border-radius:6px;"></div>
+        {% endfor %}
+      </div>
+
+      <h2 style="margin-top: 30px;">Select a color to see recommended products:</h2>
+      <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+        {% for color in palettes %}
+          <form method="get" action="{% url 'color_recommender' %}">
+            <input type="hidden" name="tone_id" value="{{ selected_tone.id }}">
+            <input type="hidden" name="color_hex" value="{{ color.color_hex }}">
+            <button style="width:40px;height:40px;background:{{ color.color_hex }};border:2px solid #000;border-radius:4px;"></button>
+          </form>
+        {% endfor %}
+      </div>
+    {% else %}
+      <p class="section-title">No related colors found for {{ selected_tone.name }}.</p>
+    {% endif %}
+  {% endif %}
+
+  {# —————————————————————————————————————————— #}
+
+  {% if recommended_products %}
+    <div class="color_container">
+      <h2 class="section-title">Recommended Products</h2>
+      <div class="card-grid">
+        {% for product in recommended_products %}
+          <div class="card">
+            <a href="{% url 'product_detail' product.id %}">
+              <img src="{{ product.image.url }}" alt="{{ product.name }}">
+              <h3>{{ product.name }}</h3>
+              <p>Price: Rs {{ product.price }}</p>
+              <p>Product Hex: {{ product.color_hex }} | Selected Hex: {{ selected_hex }}</p>
+            </a>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  {% else %}
+    {% if selected_tone and selected_hex %}
+      <p style="text-align:center; color:red;">
+        No products found matching {{ selected_hex }} for {{ selected_tone.name }}.
+      </p>
+    {% endif %}
+  {% endif %}
+
+  {# —————————————————————————————————————————— #}
+
+
+{% endblock %}
+

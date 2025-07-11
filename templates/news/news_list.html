@@ -1,0 +1,58 @@
+{% extends 'master.html' %}
+{% block body %}
+
+<div class="news">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="titlepage">
+                    <h2>Latest News</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="cards-container">
+  {% for item in news_items %}
+    <div class="blog-card" style="background-image: url('{{ item.image.url }}');">
+      <div class="title-content">
+        <h3><a href="{{ item.get_absolute_url }}">{{ item.title }}</a></h3>
+        <div class="intro"><a href="#">News</a></div> <!-- Replace "News" if you later add a category -->
+      </div>
+      <div class="card-info">
+        {{ item.content|truncatewords:20 }}
+        <a href="{{ item.get_absolute_url }}">Read Article<span class="licon icon-arr icon-black"></span></a>
+      </div>
+      <div class="utility-info">
+        <ul class="utility-list">
+          <li><span class="licon icon-like"></span><a href="#">{{ item.likes }}</a></li>
+          <li><span class="licon icon-com"></span><a href="#">{{ item.comments_count }}</a></li>
+          <li><span class="licon icon-dat"></span>{{ item.published_date|date:"d M Y" }}</li>
+          <li><span class="licon icon-tag"></span><a href="#">General</a></li> <!-- placeholder tag -->
+        </ul>
+      </div>
+      <div class="gradient-overlay"></div>
+      <div class="color-overlay"></div>
+    </div>
+  {% endfor %}
+</div>
+
+<div class="pagination">
+  <span class="step-links">
+    {% if news_items.has_previous %}
+      <a href="?page=1">First</a>
+      <a href="?page={{ news_items.previous_page_number }}">Previous</a>
+    {% endif %}
+
+    <span class="current">
+      Page {{ news_items.number }} of {{ news_items.paginator.num_pages }}
+    </span>
+
+    {% if news_items.has_next %}
+      <a href="?page={{ news_items.next_page_number }}">Next</a>
+      <a href="?page={{ news_items.paginator.num_pages }}">Last</a>
+    {% endif %}
+  </span>
+</div>
+{% endblock %}

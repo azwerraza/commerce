@@ -1,0 +1,66 @@
+{% extends 'master.html' %}
+{% block body %}
+
+<div class="blue_bg">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="titlepage">
+          <h2>Login To Your Account</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="center-page">
+  <div class="container-form">
+
+    {% if messages %}
+      {% for message in messages %}
+        <div class="alert {{ message.tags }}">{{ message }}</div>
+      {% endfor %}
+    {% endif %}
+
+    {% if form.errors %}
+      <ul class="errorlist">
+        {% for field in form %}
+          {% for error in field.errors %}
+            <li>{{ field.label }}: {{ error }}</li>
+          {% endfor %}
+        {% endfor %}
+        {% for error in form.non_field_errors %}
+          <li>{{ error }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+
+    <div class="form">
+      <form method="POST" action="{% url 'login' %}">
+        {% csrf_token %}
+
+        <!-- Email -->
+        <div class="input-box">
+          {{ form.username.label_tag }}  {# If using AuthenticationForm, this is still 'username' #}
+          {{ form.username }}
+        </div>
+
+        <!-- Password -->
+        <div class="input-box">
+          {{ form.password.label_tag }}
+          {{ form.password }}
+        </div>
+        <div class="form-links">
+         <a href="{% url 'password_reset' %}">Forgot Password?</a>
+       </div>
+
+        <button type="submit">Log In</button>
+      </form>
+    </div>
+    <div class="form-footer">
+      <p>Don't have an account? <a href="{% url 'signup' %}">Create one</a></p>
+    </div>
+
+  </div>
+</div>
+{% endblock %}
