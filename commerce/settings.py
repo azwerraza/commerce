@@ -146,11 +146,14 @@ STATIC_URL = '/static/'
 # STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # used for collectstatic (in production)
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 STORAGES = {
-    # ...
+    "default": {
+        "BACKEND": "django.core.files.storage.FileSystemStorage",  # For MEDIA
+    },
     "staticfiles": {
-        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",  # For STATIC
     },
 }
+
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
