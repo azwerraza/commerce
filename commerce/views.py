@@ -588,20 +588,37 @@ def delivery_info(request):
 
 from django.contrib import messages
 
+
 @csrf_exempt
+@login_required
 def start_payment(request):
     if request.method == 'POST':
         cart = Cart(request)
 
-        # ✅ Optional: Check if cart has items
-        if not len(cart):
-            return JsonResponse({'error': 'Cart is already empty.'}, status=400)
+        address = request.POST.get('address', '')
+        phone = request.POST.get('phone', '')
+        pincode = request.POST.get('pincode', '')
+        user = request.user
+
+        if not cart:
+            return JsonResponse({'error': 'Cart is empty'}, status=400)
+
+        for item in cart:
+            Order.objects.create(
+                image=item['product'].image,  # assuming each product has one main image
+                product=item['product'].name,
+                user=user,
+                price=item['price'],
+                quantity=item['quantity'],
+                total=item['total_price'],
+                address=address,
+                phone=phone,
+                pincode=pincode,
+                size=item.get('size_name', ''),
+                date=timezone.now().date()
+            )
 
         cart.clear()
-
-        messages.success(request, "Your order has been placed successfully!")
         return JsonResponse({'redirect_url': '/order/'})
-    
-    return JsonResponse({'error': 'Invalid method'}, status=400)
 
-
+    return JsonResponse({'error': 'Invalid request'}, status=400)
