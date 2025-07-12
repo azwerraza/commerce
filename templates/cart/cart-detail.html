@@ -462,8 +462,14 @@ const step3 = document.getElementById('step-3');
     const method = document.getElementById("payment-method").value;
 
     if (method === "online") {
-      e.preventDefault();
-document.getElementById("final-wallet-number").value = document.getElementById("wallet-number").value.trim();
+  e.preventDefault();
+  document.getElementById("final-wallet-number").value = document.getElementById("wallet-number").value.trim();
+
+  const provider = document.getElementById("wallet-provider").value;
+  if (document.getElementById("online-method").value === "wallet" && !provider) {
+    alert("Please select a wallet provider (JazzCash or EasyPaisa).");
+    return;
+  }
 
       const formData = new FormData(finalForm);
       fetch("/start-payment/", {

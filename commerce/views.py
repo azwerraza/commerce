@@ -22,6 +22,8 @@ from django.http import JsonResponse
 from app.dialogflow_utils import get_dialogflow_response
 from app.utils import get_colors_for_skin_tone
 from django.views.decorators.csrf import csrf_exempt
+from django.utils import timezone
+
 
 def Master(request):
     return render(request, 'master.html')
