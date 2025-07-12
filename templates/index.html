@@ -1,6 +1,7 @@
 {% extends 'master.html' %}
 {% block body %}
  <!-- banner -->
+
       <section class="banner_main">
          <div class="container">
             <div class="row">
@@ -144,32 +145,31 @@
     <div class="row">
       {% for news in news_items %}
       <div class="col-md-12 margin_top40">
-        <div class="row d_flex">
-          <div class="col-md-5">
-            <div class="news_img">
-              <figure>
-                <a href="{% url 'news_detail' news.slug %}">
-                  <img src="{{ news.image.url }}" alt="{{ news.title }}">
-                </a>
-              </figure>
-            </div>
-          </div>
-          <div class="col-md-7">
-            <div class="news_text">
-              <h3>
-                <a href="{% url 'news_detail' news.slug %}">{{ news.title }}</a>
-              </h3>
-              <span>{{ news.published_date }}</span>
-              <div class="date_like">
-                <span>Like {{ news.likes }}</span>
-                <span class="pad_le">Comment {{ news.comments_count }}</span>
-              </div>
-              <p>{{ news.intro|truncatechars:250 }}</p>
-              <a href="{% url 'news_detail' news.slug %}" class="btn btn-sm btn-outline-dark mt-2">Read More</a>
-            </div>
-          </div>
-        </div>
+  <div class="row d_flex news_card">
+    <div class="col-md-5">
+      <div class="news_img">
+        <figure>
+          <a href="{% url 'news_detail' news.slug %}">
+            <img src="{{ news.image.url }}" alt="{{ news.title }}">
+          </a>
+        </figure>
       </div>
+    </div>
+    <div class="col-md-7 d-flex flex-column justify-content-between news_content">
+      <div>
+        <h3><a href="{% url 'news_detail' news.slug %}">{{ news.title }}</a></h3>
+        <span>{{ news.published_date }}</span>
+        <div class="date_like">
+          <span>Like {{ news.likes }}</span>
+          <span class="pad_le">Comment {{ news.comments_count }}</span>
+        </div>
+        <p>{{ news.intro|truncatechars:250 }}</p>
+      </div>
+      <a href="{% url 'news_detail' news.slug %}" class="btn btn-sm btn-outline-dark mt-2 align-self-start">Read More</a>
+    </div>
+  </div>
+</div>
+
       {% endfor %}
     </div>
   </div>

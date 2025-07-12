@@ -12,7 +12,6 @@ from app.models import UserCreateForm, Comment, SkinTone
 from app.forms import CommentForm, SubscriberForm, UserImageForm
 from django.db.utils import IntegrityError
 from django.db.models import Q
-from django.http import JsonResponse
 from django.views.decorators.http import require_POST
 from django.conf import settings
 from django.core.paginator import Paginator
@@ -23,6 +22,7 @@ from app.dialogflow_utils import get_dialogflow_response
 from app.utils import get_colors_for_skin_tone
 from django.views.decorators.csrf import csrf_exempt
 from django.utils import timezone
+from django.contrib.auth.forms import AuthenticationForm
 
 
 def Master(request):
@@ -70,6 +70,29 @@ def signup(request):
     }
     return render(request, 'registration/signup.html', context)
 
+def login_view(request):
+    if request.method == 'POST':
+        form = AuthenticationForm(request, data=request.POST)
+        remember_me = request.POST.get('remember_me')  # 👈 GET checkbox value
+
+        if form.is_valid():
+            user = form.get_user()
+            login(request, user)
+
+            # 👇 Session expiration logic
+            if not remember_me:
+                request.session.set_expiry(0)  # Session expires on browser close
+            else:
+                request.session.set_expiry(1209600)  # 2 weeks (default)
+
+            messages.success(request, 'Logged in successfully.')
+            return redirect('index')
+        else:
+            messages.error(request, 'Invalid username or password.')
+    else:
+        form = AuthenticationForm()
+
+    return render(request, 'registration/login.html', {'form': form})
 
 @login_required(login_url="/users/login")
 def cart_add(request, id):
