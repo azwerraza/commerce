@@ -1,7 +1,8 @@
 # your_app/templatetags/cart_tag.py
 
 from django import template
-from cart.cart import Cart  # Adjust path if needed
+from app.cart import Cart
+
 
 register = template.Library()
 
