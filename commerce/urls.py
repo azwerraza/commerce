@@ -75,12 +75,14 @@ urlpatterns = [
                  path('search/', views.Search, name='search'),
 
     # path('virtual-try-on/', views.virtual_try_on, name='virtual_try_on'),
-path('upload-image/', views.upload_image, name='upload_image'),
-path('chatbot/', views.chatbot_response, name='chatbot_response'),
-path('chat/', views.chat_page, name='chat_page'),
+                path('upload-image/', views.upload_image, name='upload_image'),
+                path('chatbot/', views.chatbot_response, name='chatbot_response'),
+                path('chat/', views.chat_page, name='chat_page'),
 
-path('delivery-information/', views.delivery_info, name='delivery_info'),
-path('start-payment/', views.start_payment, name='start-payment')
+                path('delivery-information/', views.delivery_info, name='delivery_info'),
+                path('start-payment/', views.start_payment, name='start-payment'),
+# cancel order
+                path('order/cancel/<int:order_id>/', views.cancel_order, name='cancel_order'),
 
 
 # path('dialogflow-webhook/', views.dialogflow_webhook, name='dialogflow_webhook'),

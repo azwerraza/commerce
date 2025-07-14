@@ -24,7 +24,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-5n*y8myebei=k+p^wkn79zh^t)br(@67rmk1)g_)l73+7q*@&x'
+SECRET_KEY = os.environ.get("SECRET_KEY")
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -187,6 +188,7 @@ DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 LOGIN_REDIRECT_URL = 'index'
 LOGOUT_REDIRECT_URL = 'index'
+LOGIN_URL = '/accounts/login/'
 
 CKEDITOR_5_CONFIGS = {
     'default': {
@@ -217,3 +219,4 @@ LOGGING = {
         'level': 'DEBUG',
     },
 }
+

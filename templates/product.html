@@ -14,17 +14,26 @@
 <div class="product-grid-container">
             <!-- First Row -->
       {% for prod in page_obj %}
-      <div class="product-card">
-        <div class="product-image">
-          <a href="{% url 'product_detail' prod.id %}">
-          <img src="{{ prod.image.url }}" alt="{{ prod.name }}" style="height: 300px; width: 100%; object-fit: cover;">
-
+  <div class="product-card">
+    <div class="product-image">
+      <a href="{% url 'product_detail' prod.id %}">
+        <img src="{{ prod.image.url }}" alt="{{ prod.name }}" style="height: 300px; width: 100%; object-fit: cover;">
+      </a>
           <!-- Add to Cart Icon Button -->
-          <a href="{% url 'cart_add' prod.id %}" class="cart-btn add-to-cart-btn" aria-label="Add to cart">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M19 7H16V6C16 4.89543 15.1046 4 14 4H10C8.89543 4 8 4.89543 8 6V7H5C4.44772 7 4 7.44772 4 8C4 8.55228 4.44772 9 5 9H6L7 19C7 20.1046 7.89543 21 9 21H15C16.1046 21 17 20.1046 17 19L18 9H19C19.5523 9 20 8.55228 20 8C20 7.44772 19.5523 7 19 7ZM10 6H14V7H10V6Z" fill="currentColor"/>
-            </svg>
-          </a>
+          {% if user.is_authenticated %}
+        <a href="{% url 'cart_add' prod.id %}" class="cart-btn add-to-cart-btn" aria-label="Add to cart">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M19 7H16V6C16 4.89543 15.1046 4 14 4H10C8.89543 4 8 4.89543 8 6V7H5C4.44772 7 4 7.44772 4 8C4 8.55228 4.44772 9 5 9H6L7 19C7 20.1046 7.89543 21 9 21H15C16.1046 21 17 20.1046 17 19L18 9H19C19.5523 9 20 8.55228 20 8C20 7.44772 19.5523 7 19 7ZM10 6H14V7H10V6Z" fill="currentColor"/>
+    </svg>
+  </a>
+{% else %}
+  <!-- Show Login Prompt if not authenticated -->
+<button type="button" onclick="showLoginPopup()" class="cart-btn add-to-cart-btn" aria-label="Login to add to cart">    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M19 7H16V6C16 4.89543 15.1046 4 14 4H10C8.89543 4 8 4.89543 8 6V7H5C4.44772 7 4 7.44772 4 8C4 8.55228 4.44772 9 5 9H6L7 19C7 20.1046 7.89543 21 9 21H15C16.1046 21 17 20.1046 17 19L18 9H19C19.5523 9 20 8.55228 20 8C20 7.44772 19.5523 7 19 7ZM10 6H14V7H10V6Z" fill="currentColor"/>
+    </svg>
+  </button>
+{% endif %}
+
           {% if user.is_authenticated and prod.id in wishlist_items %}
   <!-- Filled Heart -->
   <a href="{% url 'wishlist_remove' prod.id %}" class="wishlist-btn active" aria-label="Remove from wishlist">
@@ -91,5 +100,32 @@
 
 
 
+<!-- Login Prompt Modal -->
+<!-- Login Prompt Modal -->
+<div id="loginModal" style="display: none; position: fixed; top: 30%; left: 50%; transform: translate(-50%, -50%);
+     background-color: white; width: 600px; padding: 30px; border-radius: 12px;
+     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25); z-index: 1000; text-align: center;">
+
+  <p style="font-size: 18px; margin-bottom: 20px;">
+    <strong>Have an account?</strong><br>Log in to use this feature.
+  </p>
+
+  <div style="margin-bottom: 20px;">
+    <a href="{% url 'login' %}?next={{ request.path }}" class="btn btn-primary" style="margin-right: 15px;">Log in</a>
+    <a href="{% url 'signup' %}?next={{ request.path }}" class="btn btn-secondary">Sign up</a>
+  </div>
+
+  <button onclick="closeLoginPopup()" class="btn btn-light" style="padding: 6px 16px;">Close</button>
+</div>
+
+
+<script>
+  function showLoginPopup() {
+    document.getElementById("loginModal").style.display = "block";
+  }
+  function closeLoginPopup() {
+    document.getElementById("loginModal").style.display = "none";
+  }
+</script>
 
 {% endblock%}

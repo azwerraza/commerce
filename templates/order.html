@@ -1,6 +1,14 @@
 {% extends 'master.html' %}
 {% block body %}
-
+<style>
+.modal {
+  position: fixed;
+  z-index: 9999;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0,0,0,0.6);
+}
+</style>
 <div class="cart-contain">
   <h2>Your Orders</h2>
 {% if messages %}
@@ -25,36 +33,50 @@
 
   <div class="cart-list" id="cart-list">
     <table>
-      <thead>
-        <tr>
-          <th>Image</th>
-          <th>Product</th>
-          <th>Size</th>
-          <th>Price</th>
-          <th>Qty</th>
-          <th>Total</th>
-          <th>Date</th>
-        </tr>
-      </thead>
+<thead>
+  <tr>
+    <th>Image</th>
+    <th>Product</th>
+    <th>Size</th>
+    <th>Price</th>
+    <th>Qty</th>
+    <th>Total</th>
+    <th>Date</th>
+    <th>Action</th>
+  </tr>
+</thead>
+
       <tbody>
-        {% for item in order %}
-        <tr>
-          <td>
-            {% if item.image %}
-              <img src="{{ item.image.url }}" alt="{{ item.product }}" width="60" class="img-thumbnail">
-            {% else %}
-              <div class="no-image">No image</div>
-            {% endif %}
-          </td>
-          <td>{{ item.product }}</td>
-          <td>{{ item.size|default:"-" }}</td>
-          <td>Rs. {{ item.price }}</td>
-          <td>{{ item.quantity }}</td>
-          <td>Rs. {{ item.total }}</td>
-          <td>{{ item.date|date:"d M Y" }}</td>
-        </tr>
-        {% endfor %}
-      </tbody>
+  {% for item in order %}
+  <tr>
+    <td>
+      {% if item.image %}
+        <img src="{{ item.image.url }}" alt="{{ item.product }}" width="60" class="img-thumbnail">
+      {% else %}
+        <div class="no-image">No image</div>
+      {% endif %}
+    </td>
+    <td>{{ item.product }}</td>
+    <td>{{ item.size|default:"-" }}</td>
+    <td>Rs. {{ item.price }}</td>
+    <td>{{ item.quantity }}</td>
+    <td>Rs. {{ item.total }}</td>
+    <td>{{ item.date|date:"d M Y" }}</td>
+    <td>
+  <button type="button" class="btn btn-sm btn-warning" onclick="openCancelModal({{ item.id }})">
+    Cancel
+  </button>
+
+  <form id="cancel-form-{{ item.id }}" action="{% url 'cancel_order' item.id %}" method="post" style="display: none;">
+    {% csrf_token %}
+    <input type="hidden" name="reason" id="reason-{{ item.id }}">
+  </form>
+</td>
+
+  </tr>
+  {% endfor %}
+</tbody>
+
     </table>
   </div>
   {% else %}
@@ -64,6 +86,25 @@
   </div>
   {% endif %}
 </div>
+<div id="cancelModal" class="modal" style="display: none;">
+  <div class="modal-content" style="max-width: 400px; margin: 100px auto; background: white; padding: 20px; border-radius: 8px;">
+    <h4>Reason for Cancellation</h4>
+    <select id="cancelReason" class="form-control">
+      <option value="" selected disabled>Select a reason</option>
+      <option value="Ordered by mistake">Ordered by mistake</option>
+      <option value="Found a better price elsewhere">Found a better price elsewhere</option>
+      <option value="Delivery time is too long">Delivery time is too long</option>
+      <option value="No longer needed">No longer needed</option>
+      <option value="Other">Other</option>
+    </select>
+    <div class="mt-3 text-right">
+      <button class="btn btn-secondary" onclick="closeCancelModal()">Close</button>
+      <button class="btn btn-danger" onclick="submitCancel()">Confirm Cancel</button>
+    </div>
+  </div>
+</div>
+
+
 
 <script>
   setTimeout(function () {
@@ -74,6 +115,33 @@
       setTimeout(() => messages.remove(), 1000); // remove after fade-out
     }
   }, 5000); // 5 seconds delay
+</script>
+<script>
+  let currentOrderId = null;
+
+  function openCancelModal(orderId) {
+    currentOrderId = orderId;
+    document.getElementById('cancelModal').style.display = 'block';
+  }
+
+  function closeCancelModal() {
+    document.getElementById('cancelModal').style.display = 'none';
+    document.getElementById('cancelReason').selectedIndex = 0;
+  }
+
+  function submitCancel() {
+    const selectedReason = document.getElementById('cancelReason').value;
+    if (!selectedReason) {
+      alert("Please select a reason.");
+      return;
+    }
+
+    const reasonInput = document.getElementById(`reason-${currentOrderId}`);
+    const form = document.getElementById(`cancel-form-${currentOrderId}`);
+
+    reasonInput.value = selectedReason;
+    form.submit();
+  }
 </script>
 
 {% endblock %}

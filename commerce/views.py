@@ -94,7 +94,7 @@ def login_view(request):
 
     return render(request, 'registration/login.html', {'form': form})
 
-@login_required(login_url="/users/login")
+@login_required
 def cart_add(request, id):
     cart = Cart(request)
     product = get_object_or_404(Product, id=id)
@@ -129,7 +129,7 @@ def cart_add(request, id):
     request.session.pop(f'temp_qty_{id}', None)
     return redirect("cart_detail")
 
-@login_required(login_url="/users/login")
+@login_required
 def item_clear(request, id):
     cart = Cart(request)
     product = get_object_or_404(Product, id=id)
@@ -145,7 +145,7 @@ def item_clear(request, id):
     cart.remove(product=product, size=size, rental_days=rental_days)
     return redirect("cart_detail")
 
-@login_required(login_url="/users/login")
+@login_required
 def item_increment(request, id):
     cart = Cart(request)
     product = get_object_or_404(Product, id=id)
@@ -162,7 +162,7 @@ def item_increment(request, id):
     cart.add(product=product, size=size)
     return redirect("cart_detail")
 
-@login_required(login_url="/users/login")
+@login_required
 def item_decrement(request, id):
     cart = Cart(request)
     product = get_object_or_404(Product, id=id)
@@ -180,13 +180,13 @@ def item_decrement(request, id):
     cart.decrement(product=product, size=size)
     return redirect("cart_detail")
 
-@login_required(login_url="/users/login")
+@login_required
 def cart_clear(request):
     cart = Cart(request)
     cart.clear()
     return redirect("cart_detail")
 
-@login_required(login_url="/users/login")
+@login_required
 def cart_detail(request):
     cart = Cart(request)
     total_price = cart.get_total_price()  # Get total price
@@ -215,7 +215,7 @@ def Contact_Page(request):
     return render(request, 'contact.html')
 
 
-@login_required(login_url="/users/login")
+@login_required
 def CheckOut(request):
     if request.method == "POST":
         cart = Cart(request)
@@ -241,11 +241,9 @@ def CheckOut(request):
         return redirect('order')
 
 
+@login_required
 def Your_Order(request):
-    uid = request.session.get('_auth_user_id')
-    user = User.objects.get(pk=uid)
-
-    order = Order.objects.filter(user=user)
+    order = Order.objects.filter(user=request.user)
     context = {
         'order': order,
     }
@@ -647,3 +645,14 @@ def start_payment(request):
         return JsonResponse({'redirect_url': '/order/'})
 
     return JsonResponse({'error': 'Invalid request'}, status=400)
+
+@require_POST
+@login_required
+def cancel_order(request, order_id):
+    order = get_object_or_404(Order, id=order_id, user=request.user)
+    reason = request.POST.get("reason", "No reason provided")
+    # You can log, save or email this reason
+
+    order.delete()
+    messages.success(request, f"Order cancelled. Reason: {reason}")
+    return redirect('order')
