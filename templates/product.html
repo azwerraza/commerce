@@ -13,7 +13,10 @@
 
 <div class="product-grid-container">
             <!-- First Row -->
-      {% for prod in page_obj %}
+{% with seen_ids=[] %}
+  {% for prod in page_obj %}
+    {% if prod.id not in seen_ids %}
+      {% with seen_ids=seen_ids|add:prod.id %}
   <div class="product-card">
     <div class="product-image">
       <a href="{% url 'product_detail' prod.id %}">
@@ -65,7 +68,10 @@
           <p class="product-price">{{ prod.name }}</p>
         </div>
       </div>
-      {% endfor %}
+ {% endwith %}
+    {% endif %}
+  {% endfor %}
+{% endwith %}
 
 
 </div>
