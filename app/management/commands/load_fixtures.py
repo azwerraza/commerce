@@ -6,7 +6,8 @@ class Command(BaseCommand):
 
     def handle(self, *args, **kwargs):
         try:
-            call_command('loaddata', 'products.json')
+            call_command('loaddata', 'products_clean.json')
+
             self.stdout.write(self.style.SUCCESS('Successfully loaded product data!'))
         except Exception as e:
             self.stderr.write(self.style.ERROR(f'Error loading data: {e}'))
