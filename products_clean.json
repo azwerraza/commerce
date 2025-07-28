@@ -1,0 +1,1777 @@
+[
+  {
+    "model": "app.product",
+    "fields": {
+      "category": "formalwear",
+      "image": "ecommerce/pimg/WhatsApp_Image_2025-06-25_at_11.11.04_PM.jpeg",
+      "name": "Embellished Beige Bridal Maxi",
+      "price": 35000,
+      "Availability": "In Stock",
+      "date": "2025-06-26",
+      "description": "A premium unstitched formal wear dress in a luxurious beige net fabric, heavily adorned with sequins, zari, and hand embroidery. Ideal for bridal wear or high-end formal events. The set includes the front, back, sleeves, dupatta, and trouser fabric – ready to be stitched to your custom measurements.",
+      "shirt_details": "<b>Front:</b> Embroidered net panel<br>\r\n<b>Back:</b> Embroidered net panel<br>\r\n<b>Sleeves:</b> Embroidered net fabric<br>\r\n<b>Dupatta:</b> Matching net with heavy borders and motifs<br>\r\n<b>Pouch:</b> Matching fabric (optional accessory)<br>\r\n<b>Extras:</b> Embellishment patches / borders included (if applicable)<br>",
+      "trouser_details": "Plain or lightly embroidered fabric (likely included)\r\n\r\nFabric type: Jamawar / raw silk / crepe (confirm as per package)",
+      "fabric": "Shirt: Embroidered net  Dupatta: Embroidered net  Trouser: Raw silk or similar",
+      "color": "Pink Peach",
+      "color_hex": "#fbceb1",
+      "weight": null,
+      "care_instructions": "Dry clean only – due to delicate embroidery and fabric.\r\n\r\nDo not machine wash or tumble dry.\r\n\r\nStore in a cool, dry place, preferably in a garment bag.\r\n\r\nIron on low heat from the reverse side using a cloth barrier.\r\n\r\nAvoid direct contact with perfumes or deodorants to maintain embellishments.",
+      "disclaimer": "Product color may slightly vary due to photographic lighting or screen resolution.\r\n\r\nThis is an unstitched dress, and images shown are for styling reference only.\r\n\r\nAccessories (e.g., pouch, jewelry) shown in the image may or may not be included unless mentioned.\r\n\r\nEmbellishments and embroidery patterns may have minor variations based on availability.",
+      "available_sizes": [
+        9
+      ]
+    }
+  },
+  {
+    "model": "app.product",
+    "fields": {
+      "category": "formalwear",
+      "image": "ecommerce/pimg/main.jpeg",
+      "name": "Midnight Royalty",
+      "price": 30000,
+      "Availability": "In Stock",
+      "date": "2025-06-26",
+      "description": "<b>Lehenga Choli Set</b><br>\r\nElegant deep navy lehenga with intricate multicolor embroidery in chevron patterns, paired with a full-sleeve heavily embellished choli and a contrasting pastel dupatta. Traditional craftsmanship with a modern silhouette.<br><br>\r\n<b>Includes:</b> Choli, Lehenga, Dupatta",
+      "shirt_details": "<b>Front:</b> Fully embroidered<br>\r\n<b>Back:</b> Plain with border<br>\r\n<b>Sleeves:</b> Embroidered with mirror and sequin work<br>\r\n<b>Neckline:</b> Jewel neckline with embellishments<br>",
+      "trouser_details": "",
+      "fabric": "Velvet (Choli), Net (Dupatta), Banarsi Jamawar or Raw Silk (Lehenga base)",
+      "color": "Navy Blue / Lavender",
+      "color_hex": "#0047AB",
+      "weight": null,
+      "care_instructions": "",
+      "disclaimer": "",
+      "available_sizes": [
+        9
+      ]
+    }
+  },
+  {
+    "model": "app.product",
+    "fields": {
+      "category": "formalwear",
+      "image": "ecommerce/pimg/side3.jpeg",
+      "name": "Zarqa-e-Nur (Republic)",
+      "price": 125000,
+      "Availability": "In Stock",
+      "date": "2025-06-26",
+      "description": "",
+      "shirt_details": "<b>Front:</b> Heavy hand embroidery with silver sequins and threadwork<br>\r\n<b>Back:</b> Embroidered back with detailed motif work<br>\r\n<b>Sleeves:</b> Full-length sheer net sleeves with floral embroidery<br>\r\n<b>Dupatta: </b> Net dupatta with scalloped embroidered borders<br>\r\n<b>Extras: </b> Includes attached lining and back tassel detail<br><br>",
+      "trouser_details": "",
+      "fabric": "Net (Shirt & Dupatta), Raw Silk (Trousers)",
+      "color": "Champagne Beige",
+      "color_hex": "#ffdab9",
+      "weight": "Approx. 2.1 kg",
+      "care_instructions": "<ul>\r\n  <li>Dry clean recommended</li>\r\n  <li>Do not use bleach or strong stain removers</li>\r\n  <li>Wash colored and white fabrics separately</li>\r\n  <li>Iron at moderate temperature</li>\r\n</ul>",
+      "disclaimer": "",
+      "available_sizes": [
+        9
+      ]
+    }
+  },
+  {
+    "model": "app.product",
+    "fields": {
+      "category": "formalwear",
+      "image": "ecommerce/pimg/main3.jpeg",
+      "name": "Minha",
+      "price": 74500,
+      "Availability": "In Stock",
+      "date": "2025-06-26",
+      "description": "An intricately hand-embellished formal dress in dusty pink featuring rich threadwork, sequins, and bead detailing. Perfect for weddings and festive occasions.",
+      "shirt_details": "<b>Shirt</b><br>\r\n<b>Front: </b> Heavily hand-embellished with intricate threadwork, sequins, and bead detailing in a floral and geometric pattern<br>\r\n<b>Back: </b> Fully embroidered back with symmetrical motif work<br>\r\n<b>Sleeves: </b> Full-length net sleeves with delicate floral embroidery and bead accents<br>\r\n<b>Dupatta: </b> Soft net dupatta with pearl-spray detailing and scalloped embroidered borders<br>\r\n<b>Extras: </b> Includes inner lining, side zip closure, and hand-made tassel finishing on the back<br><br>",
+      "trouser_details": "",
+      "fabric": "Net and organza with inner lining.",
+      "color": "Dusty Pink",
+      "color_hex": "#FDB8C0",
+      "weight": "Approximately 1.5 – 2 kg",
+      "care_instructions": "",
+      "disclaimer": "",
+      "available_sizes": [
+        9
+      ]
+    }
+  },
+  {
+    "model": "app.product",
+    "fields": {
+      "category": "formalwear",
+      "image": "ecommerce/pimg/main4.jpeg",
+      "name": "Zimal",
+      "price": 69500,
+      "Availability": "In Stock",
+      "date": "2025-06-26",
+      "description": "",
+      "shirt_details": "<b>Front:</b> Heavily embellished with 3D floral motifs, zari, dabka, tilla, and sequin work<br>\r\n<b>Back:</b> Fully embroidered with detailed patterns and a finished border<br>\r\n<b>Sleeves:</b> Full-length sheer net sleeves with intricate embroidery and cutwork<br>\r\n<b>Style:</b> Modern cold-shoulder blouse with hand-embellished neckline and cuff detailing<br>\r\n<b>Dupatta:</b> Embroidered net dupatta with four-sided borders, heavy pallus, and delicate tassels<br>",
+      "trouser_details": "Flared lehenga-style bottom in matching embroidered net with heavy border and inner lining",
+      "fabric": "Net (Shirt & Dupatta), Embroidered Net Lehenga with lining",
+      "color": "Deep Maroon Red",
+      "color_hex": "#FF2400",
+      "weight": "Approximately 2.5 kg",
+      "care_instructions": "",
+      "disclaimer": "",
+      "available_sizes": [
+        4,
+        5,
+        6,
+        7,
+        8
+      ]
+    }
+  },
+  {
+    "model": "app.product",
+    "fields": {
+      "category": "festiveCollection",
+      "image": "ecommerce/pimg/main5.jpeg",
+      "name": "Zareen",
+      "price": 12950,
+      "Availability": "In Stock",
+      "date": "2025-06-26",
+      "description": "",
+      "shirt_details": "<b>Front:</b> Fully embroidered front with fine thread motifs and mirror-effect embellishments<br>\r\n<b>Back:</b> Light embroidered back with small floral buti pattern<br>\r\n<b>Sleeves:</b> Sheer organza sleeves with thread and sequin embroidery, finished with border lace<br>\r\n<b>Dupatta:</b> Contrasting grey net dupatta featuring heavy scalloped embroidery and pearl spray<br>\r\n<b>Extras:</b> Neckline with delicate embellishment, stitched in straight shirt style<br>",
+      "trouser_details": "Plain dyed cotton trousers with minimal lace detailing at hem",
+      "fabric": "Lawn (Shirt), Net (Dupatta), Cotton (Trousers)",
+      "color": "Off-white shirt with grey dupatta",
+      "color_hex": "#fffff0",
+      "weight": "Approximately 1 kg",
+      "care_instructions": "",
+      "disclaimer": "",
+      "available_sizes": [
+        4,
+        5,
+        6,
+        7,
+        8
+      ]
+    }
+  },
+  {
+    "model": "app.product",
+    "fields": {
+      "category": "formalwear",
+      "image": "ecommerce/pimg/main6.jpeg",
+      "name": "AM-266 – Shelaf Premium",
+      "price": 45000,
+      "Availability": "In Stock",
+      "date": "2025-06-26",
+      "description": "An exquisite heavily embroidered formal outfit by Shelaf Premium in a stunning pastel sea green base with intricate silver and rose gold embellishments. The look is completed with a matching embellished dupatta, creating a perfect ensemble for weddings or festive occasions.",
+      "shirt_details": "Full-length gown style<br>\r\nLong sleeves with all-over embroidery<br>\r\nHeavily embellished front and back<br>\r\nPanelled structure with floral and geometric motifs<br>",
+      "trouser_details": "Likely a straight or churidar trouser<br>\r\nColor-matched with minimal detailing<br>",
+      "fabric": "Net or organza overlay with embroidered detailing",
+      "color": "Sea green with silver and rose gold embroidery",
+      "color_hex": "#e6e6fa",
+      "weight": null,
+      "care_instructions": "Dry clean recommended\r\nDo not use bleach or stain removing chemicals\r\nIron at moderate temperature\r\nWash colored and white fabric separately",
+      "disclaimer": "",
+      "available_sizes": [
+        9
+      ]
+    }
+  },
+  {
+    "model": "app.product",
+    "fields": {
+      "category": "formalwear",
+      "image": "ecommerce/pimg/main7.jpeg",
+      "name": "AM-253 – Imrozia Premium Embroidery",
+      "price": 40000,
+      "Availability": "In Stock",
+      "date": "2025-06-26",
+      "description": "Elegant pastel green formal attire by Imrozia featuring intricate premium embroidery work. Perfect for weddings, receptions, or festive occasions.",
+      "shirt_details": "<div class=\"desc-line\"> Full-length flare shirt</div>\r\n<div class=\"desc-line\"> All-over embroidery with pearls and sequin embellishments</div>\r\n<div class=\"desc-line\">Round neckline with back deep cut and tie detail</div>\r\n<div class=\"desc-line\">Long embroided sleeves</div>",
+      "trouser_details": "<div class=\"desc-line\"> Likely straight or churidar trousers</div>\r\n<div class=\"desc-line\"> Plain or lightly detailed in matching color</div>\r\n<div class=\"desc-line\">Round neckline with back deep cut and tie detail</div>\r\n<div class=\"desc-line\">Long embroided sleeves</div>",
+      "fabric": "Net or organza overlay, Embroidered with 3D embellishments, Inner lining (likely silk/satin)",
+      "color": "Pastel sage green",
+      "color_hex": "#50C878",
+      "weight": null,
+      "care_instructions": "",
+      "disclaimer": "",
+      "available_sizes": [
+        9
+      ]
+    }
+  },
+  {
+    "model": "app.product",
+    "fields": {
+      "category": "festiveCollection",
+      "image": "ecommerce/pimg/main8.jpeg",
+      "name": "Tawakkal Fabrics – Embroidered Beige Ensemble",
+      "price": 15000,
+      "Availability": "In Stock",
+      "date": "2025-06-26",
+      "description": "An elegant beige and gold-toned party outfit by Tawakkal Fabrics, featuring all-over embroidery, a lightweight net dupatta, and fine detailing perfect for formal occasions.",
+      "shirt_details": "Long shirt<br>\r\nIntricate thread and sequin embroidery<br>\r\nSubtle gold detailing<br>\r\nStraight-cut silhouette<br>\r\nEmbroidered borders and sleeves<br>",
+      "trouser_details": "Straight white pants<br>\r\nLikely cotton or silk base<br>\r\nSimple hemline to complement the ornate shirt<br>",
+      "fabric": "Shirt is organza. Dupatta is Sheer net with gold embroidery. Trouser is Cotton/silk",
+      "color": "Beige/Champagne with gold embellishments",
+      "color_hex": "#fffff0",
+      "weight": null,
+      "care_instructions": "",
+      "disclaimer": "",
+      "available_sizes": [
+        4,
+        5,
+        6,
+        7,
+        8
+      ]
+    }
+  },
+  {
+    "model": "app.product",
+    "fields": {
+      "category": "formalwear",
+      "image": "ecommerce/pimg/WhatsApp_Image_2025-06-25_at_11.12.52_PM.jpeg",
+      "name": "Ice Blue Embroidered Formal Suit - Jahan By Tawakkal",
+      "price": 32000,
+      "Availability": "In Stock",
+      "date": "2025-06-26",
+      "description": "An elegant ice blue formal suit beautifully adorned with intricate silver embroidery and sequin work. Perfect for weddings, festive occasions, or evening events.",
+      "shirt_details": "Straight-cut shirt with heavy embroidery on the front, full net sleeves with embellished cuffs, and a scalloped hemline. Includes beaded detailing for an elevated look.",
+      "trouser_details": "Straight pants with minimal embroidery, enhancing the sophistication of the outfit.",
+      "fabric": "Net (Shirt & Dupatta) with Satin Inner, Raw Silk Trouser",
+      "color": "Ice Blue",
+      "color_hex": "#CCCCCC",
+      "weight": "Approx. 1.2 kg",
+      "care_instructions": "",
+      "disclaimer": "",
+      "available_sizes": [
+        4,
+        5,
+        6,
+        7,
+        8
+      ]
+    }
+  },
+  {
+    "model": "app.product",
+    "fields": {
+      "category": "formalwear",
+      "image": "ecommerce/pimg/WhatsApp_Image_2025-06-25_at_11.12.58_PM.jpeg",
+      "name": "Mahaba Formal Wear - by Tawakkal Fabrics",
+      "price": 38000,
+      "Availability": "In Stock",
+      "date": "2025-06-26",
+      "description": "An exquisite champagne gold 3-piece formal suit featuring intricate thread and sequin embroidery. Its rich texture, paired with a net dupatta and graceful design, makes it a perfect choice for formal events and festive gatherings.",
+      "shirt_details": "Straight-cut shirt heavily embroidered on the front and sleeves, finished with a scalloped hem and pearl drops. Net sleeves with detailed cuffs enhance the elegant appeal.",
+      "trouser_details": "Plain raw silk straight pants complement the heavily embroidered shirt.",
+      "fabric": "Organza/Net Shirt, Raw Silk Trouser, Net Dupatta",
+      "color": "Champagne Gold",
+      "color_hex": "#fffff0",
+      "weight": "Approx. 1.3 kg",
+      "care_instructions": "",
+      "disclaimer": "",
+      "available_sizes": [
+        4,
+        5,
+        6,
+        7,
+        8
+      ]
+    }
+  },
+  {
+    "model": "app.product",
+    "fields": {
+      "category": "formalwear",
+      "image": "ecommerce/pimg/WhatsApp_Image_2025-06-25_at_11.12.09_PM.png",
+      "name": "Blush Pink Heavy Embellished Bridal Ensemble (Diyora by Maria B - AM-254)",
+      "price": 78000,
+      "Availability": "In Stock",
+      "date": "2025-06-26",
+      "description": "A breathtaking blush pink bridal ensemble featuring masterful embellishments with zari, sequins, beads, and resham work. This luxurious outfit is designed to make a statement at any wedding event, blending traditional motifs with contemporary finesse.",
+      "shirt_details": "Long flared gown-style shirt with a regal silhouette, fully embroidered front, sleeves, and borders. Intricate stone and pearl detailing adds a luxurious finish.",
+      "trouser_details": "Paired with a lehenga-style base and a red underlayer border for contrast and elegance.",
+      "fabric": "Net (Shirt), Jamawar/Raw Silk (Lehenga), Net Dupatta with heavy embroidered borders",
+      "color": "Blush Pink with Red Border Accents",
+      "color_hex": "#FDB8C0",
+      "weight": "Approx. 2.5 – 3.0 kg",
+      "care_instructions": "",
+      "disclaimer": "",
+      "available_sizes": [
+        9
+      ]
+    }
+  },
+  {
+    "model": "app.product",
+    "fields": {
+      "category": "formalwear",
+      "image": "ecommerce/pimg/A1174TP-SML-199_1_-CambricKurti-Embroidered_Pret.webp",
+      "name": "Cambric Kurti-Embroidered (Pret)",
+      "price": 3999,
+      "Availability": "In Stock",
+      "date": "2025-07-01",
+      "description": "",
+      "shirt_details": "Dyed embroidered kurti",
+      "trouser_details": "",
+      "fabric": "Cambric",
+      "color": "Sky Blue",
+      "color_hex": "#87CEEB",
+      "weight": "172 g Model is wearing size \"S\"",
+      "care_instructions": "",
+      "disclaimer": "",
+      "available_sizes": [
+        4,
+        5,
+        6,
+        7,
+        8
+      ]
+    }
+  },
+  {
+    "model": "app.product",
+    "fields": {
+      "category": "formalwear",
+      "image": "ecommerce/pimg/U4080SU-3PC-143_2_-3PieceLawnSuit-PastePrint_Unstitched.webp",
+      "name": "3 Piece Lawn Suit-Paste Print (Unstitched)",
+      "price": 4999,
+      "Availability": "In Stock",
+      "date": "2025-07-01",
+      "description": "",
+      "shirt_details": "Paste print shirt1.83 M",
+      "trouser_details": "Dyed trouser 1.8 M",
+      "fabric": "Lawn",
+      "color": "Blue",
+      "color_hex": "#87CEEB",
+      "weight": "500g",
+      "care_instructions": "",
+      "disclaimer": "",
+      "available_sizes": [
+        4,
+        5,
+        6,
+        7,
+        8
+      ]
+    }
+  },
+  {
+    "model": "app.product",
+    "fields": {
+      "category": "formalwear",
+      "image": "ecommerce/pimg/F3710ST-115-489-2PieceLawnSuit-Embroidered_1.webp",
+      "name": "2 Piece Lawn Suit-Embroidered",
+      "price": 4999,
+      "Availability": "In Stock",
+      "date": "2025-07-01",
+      "description": "",
+      "shirt_details": "Dyed embroidered paneled shirt",
+      "trouser_details": "Dyed narrow leg-trouser with pleated hem",
+      "fabric": "Lawn",
+      "color": "Pink",
+      "color_hex": "#FDB8C0",
+      "weight": "428g",
+      "care_instructions": "",
+      "disclaimer": "",
+      "available_sizes": [
+        5
+      ]
+    }
+  },
+  {
+    "model": "app.product",
+    "fields": {
+      "category": "formalwear",
+      "image": "ecommerce/pimg/F3551ST-405-299_4_-2PieceLawnSuit-Embelllished.webp",
+      "name": "2 Piece Lawn Suit-Embellished",
+      "price": 5999,
+      "Availability": "In Stock",
+      "date": "2025-07-01",
+      "description": "",
+      "shirt_details": "Dyed embellished shirt",
+      "trouser_details": "Paste-print narrow-leg shalwar with elasticised",
+      "fabric": "Cambric",
+      "color": "Turquoise",
+      "color_hex": "#8A9A5B",
+      "weight": "420g",
+      "care_instructions": "",
+      "disclaimer": "",
+      "available_sizes": [
+        5,
+        6
+      ]
+    }
+  },
+  {
+    "model": "app.product",
+    "fields": {
+      "category": "formalwear",
+      "image": "ecommerce/pimg/A0377ST-XSL-256_6_2PieceKhaddarSuit-Embroidered_Pret.webp",
+      "name": "2 Piece Khaddar Suit-Embroidered (Pret)",
+      "price": 6499,
+      "Availability": "In Stock",
+      "date": "2025-07-01",
+      "description": "",
+      "shirt_details": "Dyed embroidered shirt",
+      "trouser_details": "yed narrow-leg trouser with elasticised waistband",
+      "fabric": "Khaddar",
+      "color": "Teal",
+      "color_hex": "#008080",
+      "weight": "420g",
+      "care_instructions": "",
+      "disclaimer": "",
+      "available_sizes": [
+        5,
+        6
+      ]
+    }
+  },
+  {
+    "model": "app.product",
+    "fields": {
+      "category": "festiveCollection",
+      "image": "ecommerce/pimg/P9861SH-SML-256_1_-KhaddarShirtWithBolero-PastePrint_Pret.webp",
+      "name": "Khaddar Shirt With Bolero-Paste Print (Pret)",
+      "price": 7499,
+      "Availability": "In Stock",
+      "date": "2025-07-01",
+      "description": "",
+      "shirt_details": "<b>Bolero: </b>Gold paste print shirt \r\n<b>Shirt</b>Gold paste print shirt",
+      "trouser_details": "",
+      "fabric": "Khaddar",
+      "color": "Teal",
+      "color_hex": "#008080",
+      "weight": "396 g",
+      "care_instructions": "",
+      "disclaimer": "",
+      "available_sizes": [
+        4,
+        5,
+        6,
+        7
+      ]
+    }
+  },
+  {
+    "model": "app.product",
+    "fields": {
+      "category": "formalwear",
+      "image": "ecommerce/pimg/download_40.jpeg",
+      "name": "Red Bridal Lehenga – A Timeless Statement of Elegance",
+      "price": 119999,
+      "Availability": "In Stock",
+      "date": "2025-07-01",
+      "description": "",
+      "shirt_details": "<b>Blouse/Choli:</b> Heavily embroidered front and back, customizable neckline and sleeves.\r\n<b>Dupatta:</b> Net or chiffon with detailed borders and scattered motifs; includes one dupatta.\r\n<br>Embroidery:</b> Intricate handwork featuring zardozi, dabka, resham, and sequins",
+      "trouser_details": "<b>Lehenga Style:</b> Flared/circular/A-line silhouette with heavy ghera (can be customized)",
+      "fabric": "Velvet, raw silk, net, & organza",
+      "color": "Deep Red",
+      "color_hex": "#800020",
+      "weight": null,
+      "care_instructions": "",
+      "disclaimer": "",
+      "available_sizes": [
+        9
+      ]
+    }
+  },
+  {
+    "model": "app.product",
+    "fields": {
+      "category": "festiveCollection",
+      "image": "ecommerce/pimg/ChatGPT_Image_Jul_2_2025_07_16_49_PM_btH9dEz.png",
+      "name": "Blush Mauve Embroidered 3-Piece Lawn Suit – Zariah Edition",
+      "price": 8000,
+      "Availability": "In Stock",
+      "date": "2025-07-02",
+      "description": "",
+      "shirt_details": "Embroidered paneled shirt",
+      "trouser_details": "",
+      "fabric": "Cotton",
+      "color": "Blush pink",
+      "color_hex": "#FF7F50",
+      "weight": null,
+      "care_instructions": "",
+      "disclaimer": "",
+      "available_sizes": [
+        4,
+        5,
+        6,
+        7,
+        8
+      ]
+    }
+  },
+  {
+    "model": "app.product",
+    "fields": {
+      "category": "festiveCollection",
+      "image": "ecommerce/pimg/article.jpeg",
+      "name": "Ash Grey Straight Kurta – Minimal Luxe",
+      "price": 10000,
+      "Availability": "In Stock",
+      "date": "2025-07-02",
+      "description": "",
+      "shirt_details": "A classic straight-cut kurta in ash grey, crafted from soft cotton. \r\nFeatures subtle pintucks on the front and pearl buttons for an elegant finish. \r\nIdeal for office wear or casual outings.",
+      "trouser_details": "",
+      "fabric": "Cotton",
+      "color": "Ash Grey",
+      "color_hex": "#71797E",
+      "weight": null,
+      "care_instructions": "",
+      "disclaimer": "",
+      "available_sizes": [
+        4,
+        5,
+        6,
+        7,
+        8
+      ]
+    }
+  },
+  {
+    "model": "app.product",
+    "fields": {
+      "category": "festiveCollection",
+      "image": "ecommerce/pimg/q.jpeg",
+      "name": "Nilofer Shahid - Adaline - Tissue Organza - 3 Piece",
+      "price": 14000,
+      "Availability": "In Stock",
+      "date": "2025-07-02",
+      "description": "",
+      "shirt_details": "Meticulously crafted 3-piece ensemble in luxurious tissue organza. \r\nThe shirt features delicate hand embellishments with pearls, sequins, and threadwork that glisten subtly on the soft, shimmery fabric. Perfect for festive soirées or intimate gatherings, Adaline is an expression of understated glamour and refined femininity.",
+      "trouser_details": "Matching organza-lined trouser, the outfit reflects timeless sophistication and signature couture finesse.",
+      "fabric": "Organza/ Linen",
+      "color": null,
+      "color_hex": "#cb4154",
+      "weight": null,
+      "care_instructions": "",
+      "disclaimer": "",
+      "available_sizes": [
+        5,
+        6,
+        7
+      ]
+    }
+  },
+  {
+    "model": "app.product",
+    "fields": {
+      "category": "casualwear",
+      "image": "ecommerce/pimg/ChatGPT_Image_Jul_2_2025_07_44_39_PM.png",
+      "name": "D-Hits – Modern Ethnic Ready-to-Wear",
+      "price": 2000,
+      "Availability": "In Stock",
+      "date": "2025-07-02",
+      "description": "",
+      "shirt_details": "High-quality fabric that’s breathable, lightweight, and perfect for weather.\r\nTrendy print & cuts that blend classic eastern wear with a modern silhouette.\r\nAffordable luxury, making premium design accessible without compromising style.\r\nReady-to-wear convenience, with stitched pieces tailored for the perfect fit",
+      "trouser_details": "",
+      "fabric": "Chiffon",
+      "color": null,
+      "color_hex": "#36454F",
+      "weight": null,
+      "care_instructions": "",
+      "disclaimer": "",
+      "available_sizes": [
+        6
+      ]
+    }
+  },
+  {
+    "model": "app.product",
+    "fields": {
+      "category": "festiveCollection",
+      "image": "ecommerce/pimg/Lina___Soft_lilac_meets_effortless_gracea_pure.jpeg",
+      "name": "AM- 24 Cord Set",
+      "price": 15000,
+      "Availability": "In Stock",
+      "date": "2025-07-02",
+      "description": "",
+      "shirt_details": "Long-length shirt with a flattering straight cut, delicate detailing, and a relaxed silhouette.\r\nPair with nude heels and minimal jewelry for a clean, chic look.",
+      "trouser_details": "Coordinated straight-fit trousers that offer both comfort and structure",
+      "fabric": "Lightweight, breathable material ideal for casual or semi-formal wear",
+      "color": "Lilac",
+      "color_hex": "#C8A2C8",
+      "weight": null,
+      "care_instructions": "",
+      "disclaimer": "",
+      "available_sizes": [
+        9
+      ]
+    }
+  },
+  {
+    "model": "app.product",
+    "fields": {
+      "category": "casualwear",
+      "image": "ecommerce/pimg/Agha_Noor_Original_-_Lilac_Size__XS.jpeg",
+      "name": "AM-254 – Imrozia Premium Embroidery",
+      "price": 8000,
+      "Availability": "In Stock",
+      "date": "2025-07-02",
+      "description": "",
+      "shirt_details": "Standard-length shirt with a classic cut, button-down front, and neat stitching for a polished finish.\r\nSoft, breathable material ideal for all-day wear.",
+      "trouser_details": "Matching straight-fit trousers, designed for ease of movement and refined appeal",
+      "fabric": "Cotton",
+      "color": null,
+      "color_hex": "#C8A2C8",
+      "weight": null,
+      "care_instructions": "",
+      "disclaimer": "",
+      "available_sizes": [
+        5,
+        6
+      ]
+    }
+  },
+  {
+    "model": "app.product",
+    "fields": {
+      "category": "rental",
+      "image": "ecommerce/pimg/Faiza_Saqlain___Velvet_Collection_6aD1tEz.jpeg",
+      "name": "Am - 435 Royal Blue Maxi",
+      "price": 60000,
+      "Availability": "In Stock",
+      "date": "2025-07-03",
+      "description": "",
+      "shirt_details": "",
+      "trouser_details": "",
+      "fabric": null,
+      "color": null,
+      "color_hex": "#FFFFFF",
+      "weight": null,
+      "care_instructions": "",
+      "disclaimer": "",
+      "available_sizes": [
+        6
+      ]
+    }
+  },
+  {
+    "model": "app.product",
+    "fields": {
+      "category": "formalwear",
+      "image": "ecommerce/pimg/saree_454898.png",
+      "name": "Riwaaj-Moonlight-RED Saree",
+      "price": 10000,
+      "Availability": "In Stock",
+      "date": "2025-07-23",
+      "description": "Elegant deep maroon net saree with a lightweight, sheer drape. Perfect for festive or formal occasions, combining grace with bold sophistication.",
+      "shirt_details": "Matching satin blouse in deep maroon with a sweetheart neckline and subtle sequin embellishments, adding a touch of sparkle and elegance.",
+      "trouser_details": "",
+      "fabric": "Satin",
+      "color": "Maroon Red",
+      "color_hex": "#800020",
+      "weight": null,
+      "care_instructions": "",
+      "disclaimer": "",
+      "available_sizes": [
+        5,
+        6,
+        7
+      ]
+    }
+  },
+  {
+    "model": "app.product",
+    "fields": {
+      "category": "casualwear",
+      "image": "ecommerce/pimg/shirt_454966.png",
+      "name": "Wine Whisper Cotton Shirt",
+      "price": 2500,
+      "Availability": "In Stock",
+      "date": "2025-07-23",
+      "description": "",
+      "shirt_details": "Women's button-up shirt in a deep wine shade, crafted from soft cotton with a relaxed fit and classic collar—ideal for a casual yet polished look.",
+      "trouser_details": "",
+      "fabric": "Cotton",
+      "color": "Wine Shade",
+      "color_hex": "#800020",
+      "weight": null,
+      "care_instructions": "",
+      "disclaimer": "",
+      "available_sizes": [
+        5,
+        6,
+        7
+      ]
+    }
+  },
+  {
+    "model": "app.product",
+    "fields": {
+      "category": "casualwear",
+      "image": "ecommerce/pimg/cord_454982.png",
+      "name": "Scarlet Co-Ord Set",
+      "price": 6599,
+      "Availability": "In Stock",
+      "date": "2025-07-23",
+      "description": "Elevate your daily wardrobe with our Red Carmine ensemble, featuring shirts adorned with delicate pleats detailing and playful fringes paired with stylish bottoms. This collection seamlessly merges sophistication with a touch of whimsy, offering a perfect balance for the modern woman. The rich Red Carmine hue adds a vibrant and passionate flair, while the pleats patterns and frills create a captivating ensemble that effortlessly transitions from day to night. Step into each day with confidence and style, embracing the charm of Red Carmine with our thoughtfully designed shirts and bottoms.",
+      "shirt_details": "Outfit Type: Eastern Ready to wear\r\nSub-Category: Co Ord Sets",
+      "trouser_details": "",
+      "fabric": "Wash & Wear",
+      "color": "Maroon",
+      "color_hex": "#800020",
+      "weight": null,
+      "care_instructions": "",
+      "disclaimer": "",
+      "available_sizes": [
+        5,
+        6,
+        7
+      ]
+    }
+  },
+  {
+    "model": "app.product",
+    "fields": {
+      "category": "festiveCollection",
+      "image": "ecommerce/pimg/dd_455015.png",
+      "name": "Maroon Red Kameez Lehenga for Pakistani Bridal Dresses",
+      "price": 41000,
+      "Availability": "In Stock",
+      "date": "2025-07-23",
+      "description": "Breathtaking Details of our Scarlet Ensemble #Jennifer\r\nThe classic, the modern, the glamorous or the unconventional. Delicately Crafted Deep Maroon Organza Pishwas engraved with intricate details and delicate embroidery work on every panel with an organza dupatta that has exquisite embroidery borders makes it a statement attire for the next festive season.",
+      "shirt_details": "Style: Ready To Wear (Kalidar With Dupatta)\r\nWork: Embroidery & Embellishment",
+      "trouser_details": "",
+      "fabric": "Organza",
+      "color": "Deep Maroon",
+      "color_hex": "#800020",
+      "weight": null,
+      "care_instructions": "",
+      "disclaimer": "",
+      "available_sizes": [
+        5,
+        6
+      ]
+    }
+  },
+  {
+    "model": "app.product",
+    "fields": {
+      "category": "casualwear",
+      "image": "ecommerce/pimg/E84491s_1.webp",
+      "name": "Button Down Relaxed Long Sleeve Shirt",
+      "price": 3000,
+      "Availability": "In Stock",
+      "date": "2025-07-23",
+      "description": "",
+      "shirt_details": "Stay cool and comfy as we transitional into summer with our 100% linen relaxed fit shirt. The perfect layering piece for the warmer days, this shirt is features button-down fastening, long sleeves and a chest pocket. Pair with your favourite pair of denim for a casual look, or tailored trousers for smart style. \r\n\r\n100% linen\r\nRelaxed fit\r\nButton-down fastening\r\nLong sleeves\r\nChest pocket",
+      "trouser_details": "",
+      "fabric": "Linen",
+      "color": "Navy Blue",
+      "color_hex": "#36454f",
+      "weight": null,
+      "care_instructions": "",
+      "disclaimer": "",
+      "available_sizes": [
+        5,
+        6,
+        7
+      ]
+    }
+  },
+  {
+    "model": "app.product",
+    "fields": {
+      "category": "festiveCollection",
+      "image": "ecommerce/pimg/il_794xN.934021425_paq2.avif",
+      "name": "Blue party dress",
+      "price": 7999,
+      "Availability": "In Stock",
+      "date": "2025-07-23",
+      "description": "",
+      "shirt_details": "The prom dress in a long sleeves silhouette with a banded hem. The spring dress topped with a round-neckline + ruffle details around the waist. \r\nRound collar\r\nFitted waist\r\nFull length sleeves\r\nConcealed Back zip closure\r\nAbove ankle length",
+      "trouser_details": "",
+      "fabric": "50% linen , 50% cotton blend",
+      "color": "Navy Blue",
+      "color_hex": "#36454f",
+      "weight": null,
+      "care_instructions": "",
+      "disclaimer": "",
+      "available_sizes": [
+        5,
+        6,
+        7
+      ]
+    }
+  },
+  {
+    "model": "app.product",
+    "fields": {
+      "category": "festiveCollection",
+      "image": "ecommerce/pimg/il_794xN.5050871098_4apw.avif",
+      "name": "Navy Blue Cotton Silk Gharara Set-Cocktail Wedding Dress",
+      "price": 1599,
+      "Availability": "In Stock",
+      "date": "2025-07-23",
+      "description": "Featuring a navy blue kurta in cotton silk base with hand embroidery. It is paired with matching gharara pants and an organza lace embroidered dupatta.",
+      "shirt_details": "",
+      "trouser_details": "",
+      "fabric": "Navy Blue Cotton Silk Gharara Set",
+      "color": "Navy Blue",
+      "color_hex": "#36454f",
+      "weight": null,
+      "care_instructions": "",
+      "disclaimer": "",
+      "available_sizes": [
+        5,
+        6,
+        7
+      ]
+    }
+  },
+  {
+    "model": "app.product",
+    "fields": {
+      "category": "casualwear",
+      "image": "ecommerce/pimg/v_455199.png",
+      "name": "TWO PIECE PURE COTTON NET SHIRT WITH DUPATTA",
+      "price": 8999,
+      "Availability": "In Stock",
+      "date": "2025-07-23",
+      "description": "",
+      "shirt_details": "LENGTH: 47\"\r\nDUPATTA FABRIC: ORGANZA",
+      "trouser_details": "Not Included",
+      "fabric": "Organza",
+      "color": "Ivory",
+      "color_hex": "#FFFFF0",
+      "weight": null,
+      "care_instructions": "",
+      "disclaimer": "",
+      "available_sizes": [
+        5,
+        6,
+        7
+      ]
+    }
+  },
+  {
+    "model": "app.product",
+    "fields": {
+      "category": "formalwear",
+      "image": "ecommerce/pimg/il_794xN.3777143165_7f79.avif",
+      "name": "Lehenga choli chikankari skirt wedding gown dresses",
+      "price": 45999,
+      "Availability": "In Stock",
+      "date": "2025-07-23",
+      "description": "",
+      "shirt_details": "Flaired skirt lehenga with underlining\r\nDetailed with gold embroidery",
+      "trouser_details": "Georgette embody skirt",
+      "fabric": "Georgette",
+      "color": "Ivory",
+      "color_hex": "#FFFFF0",
+      "weight": null,
+      "care_instructions": "",
+      "disclaimer": "",
+      "available_sizes": [
+        9
+      ]
+    }
+  },
+  {
+    "model": "app.product",
+    "fields": {
+      "category": "formalwear",
+      "image": "ecommerce/pimg/LatestPakistaniWeddingDressinOpenFrockandLehengaStyle_720x.webp",
+      "name": "Open Frock and Lehenga",
+      "price": 78999,
+      "Availability": "In Stock",
+      "date": "2025-07-23",
+      "description": "",
+      "shirt_details": "The Pakistani Frock in open style has an alluring lilac shade and an organza fabric. This beautiful Pishwas Frock is hand-embellished with pearls, sequins, and motifs. Lavish zardosi and embroidery give a traditional look to the Pakistani Wedding Dress.\r\n\r\nOrganza Dupatta:\r\nThe Lehenga Frock is paired with a delicate dupatta in organza to give a final royal touch to this beautiful attire. Gold lacework on this organza dupatta make it a perfect choice for this Lehenga Dress.",
+      "trouser_details": "The Pishwas Frock is paired with Lehenga to create a ravishing Pakistani Wedding Dress. The Lehenga comes in jamawar fabric and it is gracefully adorned with classic goldwork.",
+      "fabric": "Silk, Organza, Jamawar",
+      "color": "#EACDCB",
+      "color_hex": "#fdb8c0",
+      "weight": null,
+      "care_instructions": "",
+      "disclaimer": "",
+      "available_sizes": [
+        5,
+        6,
+        7
+      ]
+    }
+  },
+  {
+    "model": "app.product",
+    "fields": {
+      "category": "formalwear",
+      "image": "ecommerce/pimg/a76c31123fca94484e513e6b84bb03e5.jpg",
+      "name": "Maxi Gown",
+      "price": 12000,
+      "Availability": "In Stock",
+      "date": "2025-07-23",
+      "description": "",
+      "shirt_details": "",
+      "trouser_details": "",
+      "fabric": null,
+      "color": "Emerald",
+      "color_hex": "#228B22",
+      "weight": null,
+      "care_instructions": "",
+      "disclaimer": "",
+      "available_sizes": [
+        6
+      ]
+    }
+  },
+  {
+    "model": "app.product",
+    "fields": {
+      "category": "formalwear",
+      "image": "ecommerce/pimg/66f40f8e460e323ee2d40d20aa40270f.jpg",
+      "name": "Gharara Set",
+      "price": 32999,
+      "Availability": "In Stock",
+      "date": "2025-07-23",
+      "description": "",
+      "shirt_details": "Designer Pakistani Bridal Dress in Lilac Kameez Lehenga Style is a stunning masterpiece adorned with cut-dana, sequins, stones, and pearls.",
+      "trouser_details": "",
+      "fabric": null,
+      "color": "Lilac",
+      "color_hex": "#AC86A8",
+      "weight": null,
+      "care_instructions": "",
+      "disclaimer": "",
+      "available_sizes": [
+        5,
+        6,
+        7
+      ]
+    }
+  },
+  {
+    "model": "app.product",
+    "fields": {
+      "category": "formalwear",
+      "image": "ecommerce/pimg/9505c23f264a633176e2069e109816bc.jpg",
+      "name": "Evadine Neue",
+      "price": 32999,
+      "Availability": "In Stock",
+      "date": "2025-07-23",
+      "description": "A richly adorned lilac crop jacket embellished with sequins and intricate thread work in vibrant pink and white hues, paired with metallic flared peshwas. The ensemble is completed with a floral color-blocked dupatta, featuring zardozi and sequin detailing, along with embroidered borders at the ends.",
+      "shirt_details": "",
+      "trouser_details": "",
+      "fabric": "Peshwas: Tissue, Dupatta: Organza",
+      "color": "Lilac",
+      "color_hex": "#AC86A8",
+      "weight": null,
+      "care_instructions": "",
+      "disclaimer": "",
+      "available_sizes": [
+        9
+      ]
+    }
+  },
+  {
+    "model": "app.product",
+    "fields": {
+      "category": "formalwear",
+      "image": "ecommerce/pimg/LatestPakistaniBridalDressinLilacKameezLehengaStyle_720x.webp",
+      "name": "Bridal Dress in Lilac Kameez Lehenga Style",
+      "price": 54999,
+      "Availability": "In Stock",
+      "date": "2025-07-23",
+      "description": "",
+      "shirt_details": "Pakistani Bridal Kameez come in elegant lilac color and is gracefully emblazoned with shimmering sequins, stones, cut-dana, and pearls. The A-line Kameez is fully embellished with intricate embroidery work and floral designs, making this kameez an epitome of beauty and grace.\r\nPakistani Bridal Dress in Lehenga Kameez style achieves the final ravishing look when paired with a delicate dupatta in net. Embellished borders, beads, stones, sequins, pearls, and silverwork make this dupatta a perfect choice for this Pakistani Bridal Outfit.",
+      "trouser_details": "The Bridal Lehenga has premium quality raw silk fabric and it looks perfect when paired with the heavily embellished pure organza kameez. The borders of this Lehenga are adorned with embroidery and threads, making it a breathtaking choice for the wedding.",
+      "fabric": "Net, Silk, Organza",
+      "color": "Lilac",
+      "color_hex": "#AC86A8",
+      "weight": null,
+      "care_instructions": "",
+      "disclaimer": "",
+      "available_sizes": [
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    }
+  },
+  {
+    "model": "app.product",
+    "fields": {
+      "category": "formalwear",
+      "image": "ecommerce/pimg/48_76fc15fc-15bd-4278-baa4-f7c62bd35cb6.webp",
+      "name": "NOOREH",
+      "price": 26950,
+      "Availability": "In Stock",
+      "date": "2025-07-23",
+      "description": "This rich emerald canvas is layered in fully net embroidered shirt. Ornamented with an artsy blend of ethnic and hand embellishments with tone of green flashy sequins detailing with richly embellished border. Richly embellished border adds a touch of luxe to entire look of this fit.",
+      "shirt_details": "Embroidered/Hand Embellished Shirt Front Net 0.65M\r\nEmbroidered Shirt Back Net 0.65M\r\nEmbroidered/Hand Embellished Sleeves Net 0.65M\r\nEmbroidered/Hand Embellished Front & Back Border Organza 1.82M\r\nEmbroidered/Hand Embellished Side Panels Net 0.65M\r\nEmbroidered Trousers Border Organza 1M\r\nEmbroidered Dupatta Border Organza 2.75Y\r\nEmbroidered Dupatta Net 2.75Y\r\nEmbroidered Dupatta Pallu Net 2.75Y\r\nDyed Trousers PK 2.5Y\r\nShirt Inner RS 2.5Y",
+      "trouser_details": "",
+      "fabric": "Net, Silk, Organza",
+      "color": "Bottle Green",
+      "color_hex": "#228B22",
+      "weight": null,
+      "care_instructions": "",
+      "disclaimer": "",
+      "available_sizes": [
+        9
+      ]
+    }
+  },
+  {
+    "model": "app.product",
+    "fields": {
+      "category": "formalwear",
+      "image": "ecommerce/pimg/690fe2df4dbe04088ad193cf24190fff.jpg",
+      "name": "Two Piece Embroided",
+      "price": 25999,
+      "Availability": "In Stock",
+      "date": "2025-07-23",
+      "description": "Full Embroidered Chiffon \r\n•Plain Chiffon Back Back embroidery Daman\r\n•Embridered Neck Patch & Hand work \r\n•Chiffon Embroidered Sleeves & embroidered border \r\n•Embroidered Front daman \r\n•Chiffon Embroidered Dupatta",
+      "shirt_details": "Malai Trouser",
+      "trouser_details": "",
+      "fabric": "Chiffon",
+      "color": "Bottle Green",
+      "color_hex": "#228B22",
+      "weight": null,
+      "care_instructions": "",
+      "disclaimer": "",
+      "available_sizes": [
+        5,
+        6,
+        7,
+        8
+      ]
+    }
+  },
+  {
+    "model": "app.product",
+    "fields": {
+      "category": "festiveCollection",
+      "image": "ecommerce/pimg/PakistaniTraditionalPurpleLongKameezwithCapriEidDress2023_720x.webp",
+      "name": "Traditional Purple Long Kameez with Capri Eid Dress",
+      "price": 32999,
+      "Availability": "In Stock",
+      "date": "2025-07-23",
+      "description": "Pakistani Traditional Purple Long Kameez with Capri Eid Dress is an elegant masterpiece that wins everyone's hearts at the very first glance with its charm. Lavish designs and hand-crafted embellishments make this beautiful Dress your foremost priority for the big day.",
+      "shirt_details": "",
+      "trouser_details": "",
+      "fabric": "Lawn",
+      "color": "Purple",
+      "color_hex": "#8E4585",
+      "weight": null,
+      "care_instructions": "",
+      "disclaimer": "",
+      "available_sizes": [
+        5,
+        6,
+        7
+      ]
+    }
+  },
+  {
+    "model": "app.product",
+    "fields": {
+      "category": "festiveCollection",
+      "image": "ecommerce/pimg/e6a43ded1a7de2fcb134c795afa74b2d.jpg",
+      "name": "Luxury Banarsi Broshia Lawn",
+      "price": 32999,
+      "Availability": "In Stock",
+      "date": "2025-07-23",
+      "description": "",
+      "shirt_details": "Banarsi Broshia Lawn Shirt\r\nBanarsi Broshia Dupatta",
+      "trouser_details": "Dyed Trouser",
+      "fabric": "Broshia Lawn",
+      "color": "Purple",
+      "color_hex": "#8E4585",
+      "weight": null,
+      "care_instructions": "",
+      "disclaimer": "",
+      "available_sizes": [
+        5,
+        6,
+        7
+      ]
+    }
+  },
+  {
+    "model": "app.product",
+    "fields": {
+      "category": "casualwear",
+      "image": "ecommerce/pimg/0610ab4e9166694ddb3590b3a9bfa478.jpg",
+      "name": "Two Piece Embroided Lawn Suit",
+      "price": 5500,
+      "Availability": "In Stock",
+      "date": "2025-07-23",
+      "description": "",
+      "shirt_details": "",
+      "trouser_details": "",
+      "fabric": "Lawn",
+      "color": "Purple",
+      "color_hex": "#8E4585",
+      "weight": null,
+      "care_instructions": "",
+      "disclaimer": "",
+      "available_sizes": [
+        9
+      ]
+    }
+  },
+  {
+    "model": "app.product",
+    "fields": {
+      "category": "casualwear",
+      "image": "ecommerce/pimg/d7206cfb5bf8da25b4d8b8a3cd69bfd8.jpg",
+      "name": "Graceveil Women's Extra Long Ruffled Hem Loose Casual Arabic Dress",
+      "price": 6999,
+      "Availability": "In Stock",
+      "date": "2025-07-23",
+      "description": "",
+      "shirt_details": "Bishop sleeve, High waist, Stand color, Unlined, Long sleeve, Full length, Maxi",
+      "trouser_details": "",
+      "fabric": "Woven Fabric, Non Elastic",
+      "color": "Yellow",
+      "color_hex": "#FFDB58",
+      "weight": null,
+      "care_instructions": "",
+      "disclaimer": "",
+      "available_sizes": [
+        9
+      ]
+    }
+  },
+  {
+    "model": "app.product",
+    "fields": {
+      "category": "casualwear",
+      "image": "ecommerce/pimg/embroidered-georgette-abaya-style-suit-in-yellow-v1-kur199.webp",
+      "name": "Embroidered Georgette Abaya Style Suit in Yellow",
+      "price": 7999,
+      "Availability": "In Stock",
+      "date": "2025-07-23",
+      "description": "",
+      "shirt_details": "",
+      "trouser_details": "",
+      "fabric": "Woven Fabric, Non Elastic",
+      "color": "Yellow",
+      "color_hex": "#FFDB58",
+      "weight": null,
+      "care_instructions": "",
+      "disclaimer": "",
+      "available_sizes": [
+        9
+      ]
+    }
+  },
+  {
+    "model": "app.product",
+    "fields": {
+      "category": "casualwear",
+      "image": "ecommerce/pimg/YELLOW_600x.webp",
+      "name": "YELLOW EMBROIDERED SUIT SET",
+      "price": 8999,
+      "Availability": "In Stock",
+      "date": "2025-07-23",
+      "description": "This breezy and comfortable suit set comes handcrafted in a soft cotton fabric. The vibrant shade of yellow is accentuated with subtle lace detailing. The elegant embroidery further adds to this must-have piece, that comes with a matching flared palazzo.",
+      "shirt_details": "",
+      "trouser_details": "",
+      "fabric": "Lawn",
+      "color": "Yellow",
+      "color_hex": "#FFDB58",
+      "weight": null,
+      "care_instructions": "",
+      "disclaimer": "",
+      "available_sizes": [
+        5,
+        6,
+        7
+      ]
+    }
+  },
+  {
+    "model": "app.product",
+    "fields": {
+      "category": "festiveCollection",
+      "image": "ecommerce/pimg/629ec556b433c3c29c0b07df882edf07.jpg",
+      "name": "Deeya",
+      "price": 34999,
+      "Availability": "In Stock",
+      "date": "2025-07-23",
+      "description": "Introducing \"Deeya\", a classical yet contemporary ensemble in midnight blue from our collection.\r\nThis ensemble features a short kameez with heavily embroidered gharara in chiffon. The full-sleeved kameez is simple and elegant, with scattered sequin work on the front and sleeves, and detailed threadwork and zari work on the hems. The combination of delicate silver embellishments on a midnight blue base symbolizes\r\nstars on a night sky. Contrasting the kameez. the lehnga is much more detailed with heavy zari work and threadwork in silver, which makes the ensemble stand out. \"Deeya\" is completed with a beautiful chiffon dupatta, with detailed borders and scattered sequins.",
+      "shirt_details": "Outfit Type: Eastern Ready to wear\r\nDupatta Fabrics: Chiffon\r\nSub-Category: Gharara\r\n3 Piece - Top + Bottom + Dupatta",
+      "trouser_details": "Bottom Style: Wide-Leg Gharara",
+      "fabric": "Chiffon",
+      "color": "Dark Blue",
+      "color_hex": "#191970",
+      "weight": null,
+      "care_instructions": "",
+      "disclaimer": "",
+      "available_sizes": [
+        5,
+        6,
+        7
+      ]
+    }
+  },
+  {
+    "model": "app.product",
+    "fields": {
+      "category": "festiveCollection",
+      "image": "ecommerce/pimg/2_83ffc533-bf63-46e4-9ba2-e12e78e5441f.webp",
+      "name": "Ferozi",
+      "price": 39999,
+      "Availability": "In Stock",
+      "date": "2025-07-28",
+      "description": "This three-piece outfit features a chiffon shirt and dupatta, offering an airy feel, paired with Korean raw silk trousers for a sleek and elegant look. Perfect for adding a touch of elegance to your wardrobe for this festive season.\r\nPieces:\r\n\r\nShirt\r\nTrousers\r\nDupatta",
+      "shirt_details": "",
+      "trouser_details": "",
+      "fabric": "Shirt: Chiffon Trousers: Korean Raw Silk Dupatta: Chiffon",
+      "color": "Ferozi",
+      "color_hex": "#87CEEB",
+      "weight": null,
+      "care_instructions": "",
+      "disclaimer": "",
+      "available_sizes": [
+        5,
+        6
+      ]
+    }
+  },
+  {
+    "model": "app.product",
+    "fields": {
+      "category": "festiveCollection",
+      "image": "ecommerce/pimg/il_794xN.6201486364_esqe.avif",
+      "name": "Lilac Gown",
+      "price": 69999,
+      "Availability": "In Stock",
+      "date": "2025-07-28",
+      "description": "",
+      "shirt_details": "This front open organza gown in shades of lavender fill with embroidery and embellishment throughout is stunningly gorgeous. Adding to the ensemble's allure is the organza dupatta, adorned with exquisite floral embroidered bunches that cascade gracefully down its length. The delicate embroidery adds texture and dimension to the dupatta, while the two-tone border enhances its beauty and elegance. the dupatta adds a touch of romantic charm to the ensemble.",
+      "trouser_details": "This ensemble is worn with flared trousers.",
+      "fabric": "Shirt: Organza Slip: PK Raw Silk Trouser: PK Raw Silk Dupatta: Organza",
+      "color": "Lilac",
+      "color_hex": "#c8a2c8",
+      "weight": null,
+      "care_instructions": "",
+      "disclaimer": "",
+      "available_sizes": [
+        5,
+        6,
+        7
+      ]
+    }
+  },
+  {
+    "model": "app.product",
+    "fields": {
+      "category": "formalwear",
+      "image": "ecommerce/pimg/p15883-embroidered-lawn-dress_a0214f5d-8fd6-4fc8-b2d1-d41288aaa9dc_360x.webp",
+      "name": "Heavy Embroidered EID Lawn Dress with Digital Print Silk Dupatta (DZ15883)",
+      "price": 9799,
+      "Availability": "In Stock",
+      "date": "2025-07-28",
+      "description": "",
+      "shirt_details": "- Unstitched Embroidered Lawn Suits in Pakistan\r\n- Replica Dress\r\n- Condition: Unstitched\r\n- Collection: Fancy Suits in Pakistan\r\n- Heavy Embroidered Neck\r\n- Heavy Embroidered Lawn Front\r\n- Embroidered Lawn Back\r\n- Heavy Embroidered Lawn Sleeves with Border Patches\r\n- Heavy Embroidered Front Daman Patch\r\n- Heavy Embroidered Back Daman Patch\r\n- Digital Printed Silk Dupatta",
+      "trouser_details": "- Plain Dyed Trouser",
+      "fabric": "Lawn",
+      "color": "Lilac",
+      "color_hex": "#c8a2c8",
+      "weight": null,
+      "care_instructions": "",
+      "disclaimer": "",
+      "available_sizes": [
+        9
+      ]
+    }
+  },
+  {
+    "model": "app.product",
+    "fields": {
+      "category": "formalwear",
+      "image": "ecommerce/pimg/zarif-chiffon-220281.webp",
+      "name": "LA CELESTE By Zarif 3 Piece Unstitched Suits ZLC 05 ASH GREY - Luxury Formals Collection",
+      "price": 9450,
+      "Availability": "In Stock",
+      "date": "2025-07-28",
+      "description": "Exuding lushness at embroidery and crafted on a bold navy blue base, this artistic design is a beauty to adore. Paired with a dupatta with contrasting patches it is given an aura of royalty.",
+      "shirt_details": "Front & Back Top\r\nSequins Embroidered Net\r\nShirt Front & Back\r\nSequins Embroidered Net \r\nSleeves\r\nSequins Embroidered Net \r\n\r\nDupatta\r\nZinc Sequins Embroidered Net\r\n\r\nDupatta Pallu/Lace\r\n-Purple Organza Pallu (2 sides)\r\n-Navy Blue Net Pallu (2 sides)\r\n-Grey Organza Pallu (2 sides)\r\n-Purple Organza Lace (4 sides)\r\n\r\nFront & Back Lace\r\nGrey Organza Sequins Embroidered\r\n\r\nSleeves Lace\r\nZinc Organza Sequins Embroidered\r\nPurple Organza Sequins Embroidered",
+      "trouser_details": "Dyed Raw Silk",
+      "fabric": "Organza",
+      "color": "Grey",
+      "color_hex": "#71797e",
+      "weight": null,
+      "care_instructions": "",
+      "disclaimer": "",
+      "available_sizes": [
+        5,
+        6,
+        7
+      ]
+    }
+  },
+  {
+    "model": "app.product",
+    "fields": {
+      "category": "festiveCollection",
+      "image": "ecommerce/pimg/lstv113260-gray.jpg",
+      "name": "Grey Georgette Floor Length Wedding Anarkali Suit",
+      "price": 35999,
+      "Availability": "In Stock",
+      "date": "2025-07-28",
+      "description": "Featuring beautiful embroidery, this grey georgette anarkali suit which will keep you comfortable and easy on the eye at the next social function.",
+      "shirt_details": "This boat neck and elbow sleeved festive and valentine wear suit designed using mirror work.\r\nPresent with santoon churidar in grey color with grey georgette dupatta.\r\nDupatta adorned with mirror work.\r\nThis anarkali suit can be customised up to maximum size available in inches 68.\r\nSlight color variation may occur due to photographic reasons.",
+      "trouser_details": "Churidar is plain.",
+      "fabric": "Georgette",
+      "color": "Grey",
+      "color_hex": "#71797e",
+      "weight": null,
+      "care_instructions": "",
+      "disclaimer": "",
+      "available_sizes": [
+        5,
+        6,
+        7
+      ]
+    }
+  },
+  {
+    "model": "app.product",
+    "fields": {
+      "category": "festiveCollection",
+      "image": "ecommerce/pimg/LongKameez_05b0ce0b-f561-4b64-9774-a611718f98fb_720x.webp",
+      "name": "Hand-embellished Party Wear",
+      "price": 75999,
+      "Availability": "In Stock",
+      "date": "2025-07-28",
+      "description": "",
+      "shirt_details": "﻿This Long Kameez comes in premium quality net in blush pink color making this Girl Dress Pakistani look even more soulful. This Long Kameez is stunningly emblazoned with fine embroidery, tilla, stones, dabka and zardozi making this dress look exquisite. Furthermore, beautiful bell-shaped sleeves are triggering the entire diaphanous look.\r\nDupatta: This Girls Dress Pakistani is paired with an ethereal yet magnificent hot pink dupatta. The fabric of this dupatta is chiffon and is heavily emblazoned with thread work and metallic threadwork elaborated by sequins, pearls, and gotta making this Pakistani Dress look traditional.,",
+      "trouser_details": "This Long kameez comes with a matching hot pink bottom that can be stitched according to the demand and size of the customer of the value. A salwar, trousers, sharara, culottes or cigarette pants can be made according to your choice. These trousers come with an embellished organza Patti patch.",
+      "fabric": "Chiffon, Net, Grip",
+      "color": "Hot Pink",
+      "color_hex": "#FF007F",
+      "weight": null,
+      "care_instructions": "",
+      "disclaimer": "",
+      "available_sizes": [
+        5,
+        6,
+        7
+      ]
+    }
+  },
+  {
+    "model": "app.product",
+    "fields": {
+      "category": "festiveCollection",
+      "image": "ecommerce/pimg/1216_1500x1500.webp",
+      "name": "Hot Pink Lace Designer Suit (Replica)",
+      "price": 36999,
+      "Availability": "Out of Stock",
+      "date": "2025-07-28",
+      "description": "Hot Pink Multi Embroidered Pakistani Pant Style Suit features kurta and pant suit with classic look for wedding season. This set is enhanced with multi resham thread, golden zari, lace and sequence work embroidery on organza silk top paired with silk pants bottom and lining. The unique part is it’s traditional embroidery and tassel enhanced organza silk dupatta. Wear this set weddings or festivities with a pair of heels and golden jewellery to have a desi girl look.\r\n\r\nThe set contains a straight cut top, pants bottom and a dupatta.\r\nThis is the best choice to wear on festivals and on wedding parties.\r\nEmbellished neckline, sleeves and daman with sequence, lace, golden zari and resham thread work.",
+      "shirt_details": "",
+      "trouser_details": "",
+      "fabric": "Organza",
+      "color": "Pink",
+      "color_hex": "#FF007F",
+      "weight": null,
+      "care_instructions": "",
+      "disclaimer": "",
+      "available_sizes": [
+        5,
+        6,
+        7
+      ]
+    }
+  },
+  {
+    "model": "app.product",
+    "fields": {
+      "category": "casualwear",
+      "image": "ecommerce/pimg/_dress.jpg",
+      "name": "Serene Elegance: Sky Blue Embroidered Lawn Suit",
+      "price": 35000,
+      "Availability": "In Stock",
+      "date": "2025-07-28",
+      "description": "Step into grace with this ethereal sky blue lawn suit featuring delicate thread buttons and a beautifully scalloped dupatta. The soft hue radiates calmness while the subtle detailing on the sleeves and dupatta border adds a touch of sophistication. Perfect for summer soirées, Eid gatherings, or a breezy festive look. Pair with minimal jewelry for a timeless, graceful vibe.",
+      "shirt_details": "",
+      "trouser_details": "",
+      "fabric": "Lawn",
+      "color": "Sky blue",
+      "color_hex": "#87CEEB",
+      "weight": null,
+      "care_instructions": "",
+      "disclaimer": "",
+      "available_sizes": [
+        4,
+        5,
+        6,
+        7,
+        8
+      ]
+    }
+  },
+  {
+    "model": "app.product",
+    "fields": {
+      "category": "casualwear",
+      "image": "ecommerce/pimg/67AC8907-ED88-4D1C-91F2-24F01462FE0B.webp",
+      "name": "Bottle Green Two Piece Dress",
+      "price": 4999,
+      "Availability": "In Stock",
+      "date": "2025-07-28",
+      "description": "It’s a two piece rawsilk suit\r\n\r\nBottle green two piece with a front open shirt with pleated and lace details on sleeves with matching pants",
+      "shirt_details": "",
+      "trouser_details": "",
+      "fabric": "Rawsilk",
+      "color": "Green",
+      "color_hex": "#228B22",
+      "weight": null,
+      "care_instructions": "",
+      "disclaimer": "",
+      "available_sizes": [
+        5,
+        6,
+        7
+      ]
+    }
+  },
+  {
+    "model": "app.product",
+    "fields": {
+      "category": "festiveCollection",
+      "image": "ecommerce/pimg/il_794xN.6253644250_q3e6.webp",
+      "name": "Pakistani Maroon Bridal Lehenga Customise size and color",
+      "price": 224291,
+      "Availability": "In Stock",
+      "date": "2025-07-28",
+      "description": "",
+      "shirt_details": "Blouse/Choli :- M size in Inches (Waist 30, Bust 36, Length 15)\r\nDupatta :- Brocade Border with Georgette Base ( 2.75 Meter)\r\nWork :- Embroidery Zari, Zardozi work",
+      "trouser_details": "Lehenga :- M size in Inches ( Waist 30, Hip 40, Length 40)",
+      "fabric": "Brocade and Georgette Kurti with same Dupatta Net",
+      "color": "Maroon Red",
+      "color_hex": "#800020",
+      "weight": null,
+      "care_instructions": "",
+      "disclaimer": "",
+      "available_sizes": [
+        6
+      ]
+    }
+  },
+  {
+    "model": "app.product",
+    "fields": {
+      "category": "rental",
+      "image": "ecommerce/pimg/Red-Bridal-Nikkah-Lehenga-3.webp",
+      "name": "Red Bridal Nikkah Lehenga",
+      "price": 224291,
+      "Availability": "In Stock",
+      "date": "2025-07-28",
+      "description": "",
+      "shirt_details": "Wide boat neckline\r\nAddon Dupatta option\r\nComplete Customization Available\r\nFast Delivery Available",
+      "trouser_details": "Pure Zari Artwork (Kora/Dabka/Nakshi)\r\nBeads Work\r\nFloral Spray\r\nSequin Work",
+      "fabric": "Finest Quality Koreal Raw Silk",
+      "color": "Maroon Red",
+      "color_hex": "#800020",
+      "weight": null,
+      "care_instructions": "",
+      "disclaimer": "",
+      "available_sizes": [
+        5,
+        6,
+        7
+      ]
+    }
+  },
+  {
+    "model": "app.product",
+    "fields": {
+      "category": "casualwear",
+      "image": "ecommerce/pimg/lstv134666.webp",
+      "name": "Purple Satin Embroidered Straight Cut Trouser Suit",
+      "price": 15999,
+      "Availability": "In Stock",
+      "date": "2025-07-29",
+      "description": "Exquisitely embroidered with hand & machine work, this purple satin trouser suit with hijab will surely set you apart.",
+      "shirt_details": "This closed neck and full sleeve party wear suit highlighted with mirror and resham thread work.\r\n\r\nAccompanied by a matching satin trouser pants and hijab in purple color with a purple organza dupatta.\r\n\r\nTrouser pants has plain.\r\n\r\nDupatta accentuated with lace work.",
+      "trouser_details": "This trouser suit can be customized up to the maximum size available in inches 69.",
+      "fabric": "Top - Satin, Bottom - Satin, Dupatta - Organza",
+      "color": "Purple",
+      "color_hex": "#8E4585",
+      "weight": null,
+      "care_instructions": "",
+      "disclaimer": "",
+      "available_sizes": [
+        5,
+        6,
+        7
+      ]
+    }
+  },
+  {
+    "model": "app.product",
+    "fields": {
+      "category": "festiveCollection",
+      "image": "ecommerce/pimg/c21ad17a0ef09e3804c16484b00f24d2.jpg",
+      "name": "Indian Style Frock",
+      "price": 57999,
+      "Availability": "In Stock",
+      "date": "2025-07-29",
+      "description": "",
+      "shirt_details": "",
+      "trouser_details": "",
+      "fabric": null,
+      "color": "Green",
+      "color_hex": "#50c878",
+      "weight": null,
+      "care_instructions": "",
+      "disclaimer": "",
+      "available_sizes": [
+        5,
+        6,
+        7
+      ]
+    }
+  },
+  {
+    "model": "app.product",
+    "fields": {
+      "category": "casualwear",
+      "image": "ecommerce/pimg/lstv136736.webp",
+      "name": "Meher Royal Purple Hand Embroidered silk Anarkali Set",
+      "price": 15999,
+      "Availability": "In Stock",
+      "date": "2025-07-29",
+      "description": "Crafted from premium fabric in a rich royal purple, the Anarkali kurta with hijab features full sleeves adorned with sequins and bead work for a regal effect. The bodice and neckline showcase heavy embroidery in floral motifs, elevated by bead and sequins accents and thread work that add depth and shimmer. Comes paired with a matching churidar bottom, hijab and a organza dupatta with mirror-embroidered buttis and an ornate scalloped border. The V-neckline and floor-length flare create a silhouette that flatters every body type and makes an unforgettable statement. This anarkali suit can be customised up to maximum size available in inches 69. Slight color variation may occur due to photographic reasons.",
+      "shirt_details": "",
+      "trouser_details": "",
+      "fabric": "Top - Silk, Bottom - Lycra, Dupatta - Organza",
+      "color": "Pure Purple",
+      "color_hex": "#8A2BE2",
+      "weight": null,
+      "care_instructions": "",
+      "disclaimer": "",
+      "available_sizes": [
+        5,
+        6,
+        7
+      ]
+    }
+  },
+  {
+    "model": "app.product",
+    "fields": {
+      "category": "festiveCollection",
+      "image": "ecommerce/pimg/1O9A9228_700x.webp",
+      "name": "Emeraude",
+      "price": 25999,
+      "Availability": "In Stock",
+      "date": "2025-07-29",
+      "description": "Organza Embroidered Hand Embellished Front Body 26\"\r\nOrganza Embroidered Back Body 26\"\r\nOrganza Embroidered Hand Embellished Front 30\"\r\nOrganza Embroidered Back 30\"\r\nOrganza Embroidered Hand Embellished Sleeve 26\"\r\nOrganza Embroidered Dupatta 2.5 Yards\r\nOrganza Embroidered Chalk & Trouser Border 7.5 Yards\r\nRussian Grip Inner 4 Yards\r\nRussian Grip Trouser 3 Yards",
+      "shirt_details": "",
+      "trouser_details": "",
+      "fabric": "Organza",
+      "color": "Green",
+      "color_hex": "#556B2F",
+      "weight": null,
+      "care_instructions": "",
+      "disclaimer": "",
+      "available_sizes": [
+        9
+      ]
+    }
+  },
+  {
+    "model": "app.product",
+    "fields": {
+      "category": "festiveCollection",
+      "image": "ecommerce/pimg/lstv114639-blue.jpg",
+      "name": "Zari Embroidered Chiffon Royal Blue Pakistani Anarkali Suit",
+      "price": 18999,
+      "Availability": "In Stock",
+      "date": "2025-07-29",
+      "description": "Elegance and charm is what you will exude once you get this Royal Blue chiffon anarkali suit which will personify your grace.",
+      "shirt_details": "This v neck and full sleeve wedding wear dress embellished in zari and stone work.\r\nCompleted with santoon cigarette pants in royal blue color with royal blue chiffon dupatta.\r\nCigarette pant is plain.\r\nDupatta is also plain.\r\nThis anarkali suit can be customised up to maximum size available in inches 68.",
+      "trouser_details": "",
+      "fabric": "Top - Chiffon, Bottom - Santoon, Dupatta - Chiffon",
+      "color": "Royal Blue",
+      "color_hex": "#000080",
+      "weight": null,
+      "care_instructions": "",
+      "disclaimer": "",
+      "available_sizes": [
+        5,
+        6,
+        7
+      ]
+    }
+  },
+  {
+    "model": "app.product",
+    "fields": {
+      "category": "casualwear",
+      "image": "ecommerce/pimg/il_794xN.6744129363_35lg.avif",
+      "name": "Royal Blue Shalwar Kameez",
+      "price": 23999,
+      "Availability": "In Stock",
+      "date": "2025-07-29",
+      "description": "Royal Blue Pakistani Latest Farshi Shalwar Suits Made To Measure Women Farsi Salwar Kameez Suits Party Wedding Wear Eid Ethnic Outfits",
+      "shirt_details": "Handmade designer suit Kameez salwar dupatta \r\nkameez Fabric - Silk\r\nbottom Fabric - Silk\r\ndupatta fabric -Organza",
+      "trouser_details": "",
+      "fabric": "Organza",
+      "color": "Royal Blue",
+      "color_hex": "#000080",
+      "weight": null,
+      "care_instructions": "",
+      "disclaimer": "",
+      "available_sizes": [
+        5,
+        6,
+        7
+      ]
+    }
+  },
+  {
+    "model": "app.product",
+    "fields": {
+      "category": "festiveCollection",
+      "image": "ecommerce/pimg/il_794xN.6979700044_d5up.avif",
+      "name": "Farshi Shalwar Set 3 pieces",
+      "price": 18999,
+      "Availability": "Out of Stock",
+      "date": "2025-07-29",
+      "description": "ROYAL BLUE SHEESHA SILK COLLECTION\r\nFARSHI SHALWAR KAMEEZ",
+      "shirt_details": "",
+      "trouser_details": "",
+      "fabric": "Sheesha Silk, Chiffon",
+      "color": "Royal Blue",
+      "color_hex": "#000080",
+      "weight": null,
+      "care_instructions": "",
+      "disclaimer": "",
+      "available_sizes": [
+        5,
+        6,
+        7
+      ]
+    }
+  },
+  {
+    "model": "app.product",
+    "fields": {
+      "category": "casualwear",
+      "image": "ecommerce/pimg/3a2ec73cabd718c3afad09fa45634392.jpg",
+      "name": "Zaaviay Pareesa Arzish Raw Silk Luxury",
+      "price": 15000,
+      "Availability": "In Stock",
+      "date": "2025-07-29",
+      "description": "",
+      "shirt_details": "",
+      "trouser_details": "",
+      "fabric": "Organza",
+      "color": "Pale Taupe",
+      "color_hex": "#D5BDAF",
+      "weight": null,
+      "care_instructions": "",
+      "disclaimer": "",
+      "available_sizes": [
+        5,
+        6,
+        7
+      ]
+    }
+  },
+  {
+    "model": "app.product",
+    "fields": {
+      "category": "festiveCollection",
+      "image": "ecommerce/pimg/1-9.jpg",
+      "name": "A Unique and Captivating 3-piece Hand-worked Copper Raw Silk Dress",
+      "price": 8499,
+      "Availability": "In Stock",
+      "date": "2025-07-29",
+      "description": "",
+      "shirt_details": "A unique dress for our unique customers.\r\n\r\nThis breathtaking 3-piece Hand-worked Copper Raw Silk Dress is made with the best Fabric. A metallic copper color makes this a wonderful addition to your Eid Wardrobe. \r\n\r\nPerfect Handwork curves around a beautiful neckline giving a beautiful image of golden flowers and vines in bloom. The shirt is divided at the hem to add to the unique designs of this amazing outfit.\r\n\r\nA soft and light Organza dupatta, made simply with elegant laces to enrich the design of the outfit.\r\n\r\nPaired with simple matching raw silk trousers.",
+      "trouser_details": "",
+      "fabric": "Organza",
+      "color": "Pale Taupe",
+      "color_hex": "#D5BDAF",
+      "weight": null,
+      "care_instructions": "",
+      "disclaimer": "",
+      "available_sizes": [
+        5,
+        6,
+        7
+      ]
+    }
+  },
+  {
+    "model": "app.product",
+    "fields": {
+      "category": "festiveCollection",
+      "image": "ecommerce/pimg/image_zoom_2.jpeg",
+      "name": "Light grey georgette silk pakistani salwar suit with dupatta unstitched",
+      "price": 34999,
+      "Availability": "In Stock",
+      "date": "2025-07-29",
+      "description": "Fabrics Details :\r\nTop : Heavy Fox Georgette Silk\r\nSleeves : Heavy Fox Georgette Silk\r\nInner : Heavy Santoon Silk\r\nLength : Max Up To 48”\r\nSize : Max Up To 60”\r\nBottom : Heavy Santoon Silk\r\nDupatta : Heavy Fox Georgette Silk\r\nWork : Multi Thread & Jari With Sequence Embroidery Stich Work\r\nType : Semi Stiched (Material)\r\nWeight : 1.00 Kg\r\nWash : First Time Dry Clean",
+      "shirt_details": "",
+      "trouser_details": "",
+      "fabric": "Georgette",
+      "color": "Grey",
+      "color_hex": "#B6B6B4",
+      "weight": null,
+      "care_instructions": "",
+      "disclaimer": "",
+      "available_sizes": [
+        5,
+        6,
+        7
+      ]
+    }
+  },
+  {
+    "model": "app.product",
+    "fields": {
+      "category": "casualwear",
+      "image": "ecommerce/pimg/download_3.jpg",
+      "name": "Brown Color Party Wear Readymade Pakistani Salwar Suits with Pant & Dupatta",
+      "price": 3499,
+      "Availability": "In Stock",
+      "date": "2025-07-29",
+      "description": "",
+      "shirt_details": "",
+      "trouser_details": "",
+      "fabric": "Georgette",
+      "color": "Brown",
+      "color_hex": "#65000B",
+      "weight": null,
+      "care_instructions": "",
+      "disclaimer": "",
+      "available_sizes": [
+        5,
+        6,
+        7
+      ]
+    }
+  },
+  {
+    "model": "app.product",
+    "fields": {
+      "category": "festiveCollection",
+      "image": "ecommerce/pimg/anarkali-suit-front-web-img-333-1703.jpg",
+      "name": "Brown Georgette Embroidered Wedding Anarkali Suit",
+      "price": 18999,
+      "Availability": "In Stock",
+      "date": "2025-07-29",
+      "description": "Featuring beautiful embroidery, this Brown Georgette Anarkali Suit Which will make you absolutely astoundingly gorgeous and that will be least interesting thing about you. This Closed neck and Full Sleeves clothing designed with resham, zari, aari, hand, thread and embroidered work.\r\n\r\nCompleted with Santoon Churidar in Brown Color with Brown Chiffon Dupatta. Dupatta designed with Stone and Hand Work.\r\n\r\nThis Anarkali Suit can be customized up to size 44 Inches around the Bust.",
+      "shirt_details": "",
+      "trouser_details": "",
+      "fabric": "op - Georgette Bottom - SantoonDupatta - Chiffon",
+      "color": "Brown",
+      "color_hex": "#65000B",
+      "weight": null,
+      "care_instructions": "",
+      "disclaimer": "",
+      "available_sizes": [
+        5,
+        6,
+        7
+      ]
+    }
+  }
+]
